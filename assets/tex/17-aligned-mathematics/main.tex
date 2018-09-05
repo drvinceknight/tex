@@ -1,0 +1,29 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\title{Aligned mathematics}
+\author{V Knight}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+Some examples of aligned mathematics:
+
+\begin{align}
+    (x+h)^2-x^2 & =x^2+2xh+h^2-x^2 \nonumber\\
+                & =2xh+h^2 \nonumber\\
+                & =h(2x+h) \nonumber
+\end{align}
+
+
+Some explanatory text:
+
+\begin{align}
+    (x+h)^2-x^2 & = x^2+2xh+h^2-x^2 && \text{(by distributivity)}\\
+                & = 2xh+h^2         && \text{(by subtraction)}\\
+                & = h(2x+h)         && \text{(by factorisation)}
+\end{align}
+\end{document}

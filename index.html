@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="/tex/assets/css/main.css">
   <link rel="stylesheet" href="/tex/assets/css/normalize.css">
   <link rel="stylesheet" href="/tex/assets/css/skeleton.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <link rel="shortcut icon" type="image/png" href="/tex/assets/favicon.ico"/>
 
@@ -37,18 +38,123 @@
 </head>
 <body>
 
-    <div class="container">
-		<section class="header">
-		<h1 class="title">Writing with \(\LaTeX\)</h1>
-		</section>
-    </div>
+    <header>
+       
+      <a class="logo">Writing with \(\LaTeX\)</a>
+      <input id="nav" type="checkbox">
+      <label for="nav"></label>
+      <nav>
+            <ul>
+              
+              <li><a href="#00-about-latex">About \(LaTeX\)</a></li>
+              
+              <li><a href="#01-basic-document">A basic document</a></li>
+              
+              <li><a href="#02-special-characters">Special characters</a></li>
+              
+              <li><a href="#03-the-preamble">The preamble</a></li>
+              
+              <li><a href="#04-an-abstract">An abstract</a></li>
+              
+              <li><a href="#05-lists">Lists</a></li>
+              
+              <li><a href="#06-tables">Tables</a></li>
+              
+              <li><a href="#07-including-pictures">Including pictures</a></li>
+              
+              <li><a href="#08-drawing-pictures">Drawing pictures</a></li>
+              
+              <li><a href="#09-sections">Sections</a></li>
+              
+              <li><a href="#10-bibliographies">Bibliographies</a></li>
+              
+              <li><a href="#11-inline-mathematics">Inline mathematics</a></li>
+              
+              <li><a href="#12-display-mathematics">Displayed mathematics</a></li>
+              
+              <li><a href="#13-equations">Equations</a></li>
+              
+              <li><a href="#14-text-in-mathematics">Text in mathematics</a></li>
+              
+              <li><a href="#15-arithmetic-operators">Arithmetic operators</a></li>
+              
+              <li><a href="#16-matrices">Matrices</a></li>
+              
+              <li><a href="#17-aligned-mathematics">Aligned mathematics</a></li>
+              
+              <li><a href="#18-partitioned-mathematics">Partitioned statements</a></li>
+              
+              <li><a href="#19-presentations">Presentations</a></li>
+              
+              <li><a href="#20-overlays-in-presentations">Titles and sections with presentations</a></li>
+              
+            </ul>
+      </nav>
+
+    </header>
 
 	<div class="container">
         
-    <h2>Creating a basic document.</h2>
+    
+        <h3 id=00-about-latex>About \(LaTeX\)</h3>
+<p>A typesetting language is a language that requires the user to write code that
+is then 'translated' to a form that is 'human readable'.</p>
 <p><img class="u-full-width" src="/tex/assets/img/compile_diagram.png"></p>
-<pre><code class="language-latex">\documentclass{article} % There are various classes of documents, we will see
-                        % one for creating presentations later
+<p>A powerful typesetting language that is popular in scientific writing is
+\(\LaTeX\) (pronounced: lay-tech).</p>
+<p>This resource gives an overview of \(\LaTeX\): you can either install
+\(\LaTeX\) on your own computer:</p>
+<ul>
+<li><a href="http://miktex.org/">MikTeX</a> on windows</li>
+<li><a href="https://tug.org/mactex/">MacTeX</a> on OS X</li>
+</ul>
+<p>If you do not already have an installed version I recommend
+<a href="https://www.overleaf.com/">overleaf.com</a> a cloud based service.</p>
+
+        
+        
+        <hr>
+    
+        <h3 id=01-basic-document>A basic document</h3>
+<p>In the editor type the following:</p>
+<pre><code class="language-latex">\documentclass{article}
+
+
+\begin{document}
+Hello, world!
+\end{document}
+
+</code></pre>
+
+<p>The next step is to <em>compile</em> this <code>tex</code> file.  For the purposes of this
+tutorial I recommend compiling with a modern compiler like <code>pdflatex</code> or
+<code>xelatex</code>. <strong>If you are using a cloud based service compilation usually happens
+automatically.</strong></p>
+
+        
+        <a href="/tex/assets/tex/01-basic-document/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/01-basic-document/main.pdf">main.pdf</a>
+        
+        
+        <hr>
+    
+        <h3 id=02-special-characters>Special characters</h3>
+<p>The following keys are used to type text in a source file:</p>
+<pre><code class="language-latex">a-z A-Z 0-9
++ = * / ( ) [ ]
+</code></pre>
+
+<p>The following punctuation marks:</p>
+<pre><code class="language-latex">' ? ! : ` ' -
+</code></pre>
+
+<p>Finally there are 13 special keys that are used in commands:</p>
+<pre><code class="language-latex"># $ % &amp; ~ _ ^ \ { } @ &quot; |
+</code></pre>
+
+<p>For example, <code>%</code> sign is used to denote comments in LaTeX (like <code>#</code> in Python).
+Modify your \(\LaTeX\) file so it looks like:</p>
+<pre><code class="language-latex">\documentclass{article} % There are various classes of documents, we will see a few later.
 
 \begin{document} % This line start the document
 Hello, world!
@@ -56,27 +162,928 @@ Hello, world!
 
 </code></pre>
 
-<p><a href="/tex/assets/tex/00/main.tex">main.tex</a>
-<a href="/tex/assets/tex/00/main.pdf">main.pdf</a></p>
-<h2>Here is another file</h2>
-<pre><code class="language-latex">\documentclass{article} % There are various classes of documents, we will see
-                        % one for creating presentations later
+        
+        <a href="/tex/assets/tex/02-special-characters/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/02-special-characters/main.pdf">main.pdf</a>
+        
+        
+        <hr>
+    
+        <h3 id=03-the-preamble>The preamble</h3>
+<p>In general all the code that comes before the <code>\begin{document}</code> statement is
+called the 'preamble' and is used to set a title for the document, call certain
+packages as well as various other things. The following code (to be inserted in
+the preamble of your document) sets a title:</p>
+<pre><code class="language-latex">\title{Choose a title}
+\author{V Knight}
+\date{\today}
+</code></pre>
+
+<p>If you compile your document this won't include the title in the output. To
+do so you need to include the following line (in the main body):</p>
+<pre><code class="language-latex">\maketitle
+</code></pre>
+
+<p>Your full document will now look like:</p>
+<pre><code class="language-latex">\documentclass{article} % There are various classes of documents, we will see a few later.
+
+\title{Choose a title}
+\author{V Knight}
+\date{\today}
 
 \begin{document} % This line start the document
-Hello, world!
 
-Here is an equation:
+\maketitle
+
+Hello, world!
+\end{document}
+
+</code></pre>
+
+        
+        <a href="/tex/assets/tex/03-the-preamble/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/03-the-preamble/main.pdf">main.pdf</a>
+        
+        
+        <hr>
+    
+        <h3 id=04-an-abstract>An abstract</h3>
+<p>The following will add an abstract to your document:</p>
+<pre><code class="language-latex">\begin{abstract}
+    This document contains some basic LaTeX code that will be useful to me
+    in the future.
+\end{abstract}
+</code></pre>
+
+<p>Your full document will now look like:</p>
+<pre><code class="language-latex">\documentclass{article} % There are various classes of documents, we will see a few later.
+
+\title{Choose a title}
+\author{V Knight}
+\date{\today}
+
+\begin{document} % This line start the document
+
+\begin{abstract}
+    This document contains some basic LaTeX code that will be useful to me
+    in the future.
+\end{abstract}
+
+\maketitle
+
+Hello, world!
+\end{document}
+
+</code></pre>
+
+        
+        <a href="/tex/assets/tex/04-an-abstract/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/04-an-abstract/main.pdf">main.pdf</a>
+        
+        
+        <hr>
+    
+        <h3 id=05-lists>Lists</h3>
+<p>There are various ways to obtain lists:</p>
+<pre><code class="language-latex">\begin{itemize}
+    \item Unordered item number 1
+    \item Unordered item number 2
+\end{itemize}
+</code></pre>
+
+<pre><code class="language-latex">\begin{enumerate}
+    \item Ordered item number 1
+    \item Ordered item number 2
+\end{enumerate}
+</code></pre>
+
+<p>A full document with both these lists is:</p>
+<pre><code class="language-latex">\documentclass{article}
+
+\title{Writing lists}
+\author{V Knight}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+    \item Unordered item number 1
+    \item Unordered item number 2
+\end{itemize}
+
+\begin{enumerate}
+    \item Ordered item number 1
+    \item Ordered item number 2
+\end{enumerate}
+\end{document}
+
+</code></pre>
+
+<p>Note that in LaTeX indentation is not required it is just good practice. Unlike
+Python where specific environments are delimited by indentation levels, in
+LaTeX they are ended by specific end statements <code>\end{enumerate}</code>.</p>
+
+        
+        <a href="/tex/assets/tex/05-lists/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/05-lists/main.pdf">main.pdf</a>
+        
+        
+        <hr>
+    
+        <h3 id=06-tables>Tables</h3>
+<p>The following code creates a simple table (note the <code>c</code>, <code>r</code>, and <code>l</code> tags that
+indicate text alignment, experiment by changing these):</p>
+<pre><code class="language-latex">\begin{tabular}{|l|c|r|}
+    \hline
+    Name &amp; Gender &amp; Start Time\\
+    \hline
+    Angelico &amp; Male &amp; 1100\\
+    \hline
+    Leanne &amp; Female &amp; 0830\\
+    \hline
+    Lisa &amp; Female &amp; 0730\\
+    \hline
+\end{tabular}
+</code></pre>
+
+<p>A full document with this table is:</p>
+<pre><code class="language-latex">\documentclass{article}
+
+\title{Tables}
+\author{V Knight}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{tabular}{|l|c|r|}
+    \hline
+    Name &amp; Gender &amp; Start Time\\
+    \hline
+    Angelico &amp; Male &amp; 1100\\
+    \hline
+    Leanne &amp; Female &amp; 0830\\
+    \hline
+    Lisa &amp; Female &amp; 0730\\
+    \hline
+\end{tabular}
+
+\end{document}
+
+</code></pre>
+
+<p>In general in LaTeX <code>\\</code> is used to denote a 'new line'.</p>
+
+        
+        <a href="/tex/assets/tex/06-tables/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/06-tables/main.pdf">main.pdf</a>
+        
+        
+        <hr>
+    
+        <h3 id=07-including-pictures>Including pictures</h3>
+<p>To include a picture is straightforward in LaTeX. We make use of the <code>graphicx</code>
+package. In LaTeX packages are included in the preamble using <code>usepackage</code>.
+Include the following in the preamble:</p>
+<pre><code class="language-latex">\usepackage{graphicx}
+</code></pre>
+
+<p>The following code (somewhere in the body) will include a picture:</p>
+<pre><code class="language-latex">\includegraphics{path_to_picture}
+</code></pre>
+
+<p>We can put this in the <code>center</code> environment to centre the picture:</p>
+<pre><code class="language-latex">\begin{center}
+    \includegraphics{path_to_picture}
+\end{center}
+</code></pre>
+
+<p>We can also pass options to <code>includegraphics</code> to specify the width. For example,
+this ensures the picture will be 60% of the width of the page:</p>
+<pre><code class="language-latex">\begin{center}
+    \includegraphics[width=.6\textwidth]{path_to_picture}
+\end{center}
+</code></pre>
+
+<p>Here is an example image:</p>
+<p>Images can be in jpg, png and
+pdf format when using a modern compiler, here is a picture as an example:
+<a href="/tex/assets/tex/07-including-pictures/dog.jpg">dog.jpg</a>.</p>
+<p>A full document with that images is:</p>
+<pre><code class="language-latex">\documentclass{article}
+
+\usepackage{graphicx}
+
+\title{Including images}
+\author{V Knight}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+    \includegraphics[width=.6\textwidth]{dog.jpg}
+\end{center}
+
+\end{document}
+
+</code></pre>
+
+        
+        <a href="/tex/assets/tex/07-including-pictures/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/07-including-pictures/main.pdf">main.pdf</a>
+        
+        
+        <hr>
+    
+        <h3 id=08-drawing-pictures>Drawing pictures</h3>
+<p>Graphs, pictures and diagrams can thus be created in any software of choice
+(Python, inkscape, etc...) and then included as required <strong>but</strong> it
+is often easier to draw a picture in LaTeX itself using code. A great package
+to do this with is <code>tikz</code>. Include the following in the preamble:</p>
+<pre><code class="language-latex">\usepackage{tikz}
+</code></pre>
+
+<p>Using this package we start a picture by setting up a tikzpicture environment.</p>
+<pre><code class="language-latex">\begin{tikzpicture}
+
+\end{tikzpicture}
+</code></pre>
+
+<p>We then draw various shapes and connectors using the <code>\draw</code> command including
+coordinates:</p>
+<pre><code class="language-latex">\begin{tikzpicture}
+    \draw (0,0) -- (0,2); % This draws a line from (0,0) to (0,2)
+    \draw (-1,1) -- (1,1); % This draws a line from (-1,1) to (1,1)
+    \draw (0,0) -- (1,-1); % This draws a line from (0,0) to (1,-1)
+    \draw (0,0) -- (-1,-1); % This draws a line from (0,0) to (-1,-1)
+    \draw (0,2.5) circle(.5); % This draws a circle at (0,2.5) with radius .5
+\end{tikzpicture}
+</code></pre>
+
+<p>This is very much touching the surface of what can be down with tikz. The
+simplest next step is to include various color and thickness options (we can
+also center the drawing):</p>
+<pre><code class="language-latex">\begin{center}
+    \begin{tikzpicture}
+        \draw [ultra thick] (0,0) -- (0,2); % This draws a line from (0,0) to (0,2)
+        \draw [thin, color=blue] (-1,1) -- (1,1); % This draws a line from (-1,1) to (1,1)
+        \draw [thick] (0,0) -- (1,-1); % This draws a line from (0,0) to (1,-1)
+        \draw [thick] (0,0) -- (-1,-1); % This draws a line from (0,0) to (-1,-1)
+        \draw [color=red, fill=green] (0,2.5) circle(.5); % This draws a circle at (0,2.5) with radius .5
+    \end{tikzpicture}
+\end{center}
+</code></pre>
+
+<p>A lot more can be done with tikz and there are a variety of great examples,
+tutorials online.</p>
+<p>A full document with that images is:</p>
+<pre><code class="language-latex">\documentclass{article} 
+
+\usepackage{tikz}
+
+\title{Drawing with tikz}
+\author{V Knight}
+\date{\today}
+
+\begin{document} 
+
+\maketitle
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw [ultra thick] (0,0) -- (0,2); % This draws a line from (0,0) to (0,2)
+        \draw [thin, color=blue] (-1,1) -- (1,1); % This draws a line from (-1,1) to (1,1)
+        \draw [thick] (0,0) -- (1,-1); % This draws a line from (0,0) to (1,-1)
+        \draw [thick] (0,0) -- (-1,-1); % This draws a line from (0,0) to (-1,-1)
+        \draw [color=red, fill=green] (0,2.5) circle(.5); % This draws a circle at (0,2.5) with radius .5
+    \end{tikzpicture}
+\end{center}
+
+\end{document}
+
+</code></pre>
+
+        
+        <a href="/tex/assets/tex/08-drawing-pictures/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/08-drawing-pictures/main.pdf">main.pdf</a>
+        
+        
+        <hr>
+    
+        <h3 id=09-sections>Sections</h3>
+<p>It is possible to organise parts of a document using 'sections':</p>
+<pre><code class="language-latex">\section{My first section}
+
+This is a section with a few subsections.
+
+    \subsection{A part of my first section}
+
+    Here I could write about the problem I'm trying to solve.
+
+    \subsection{Another part of my first section}
+
+    In this subsection I could solve the problem.
+
+        \subsubsection{Further fragmentation...}
+
+\section{My second section}
+
+etc...
+</code></pre>
+
+<p>We can include labels to sections so that we can refer to them:</p>
+<pre><code class="language-latex">\section{My first section}\label{first_section}
+
+\section{My second section}\label{second_section}
+
+In Section \ref{first_section} we saw that...
+</code></pre>
+
+<p>When compiling one needs to compile twice:</p>
+<ol>
+<li>The first time to find all the labels;</li>
+<li>The second time to match the labels to the references.</li>
+</ol>
+<p>If you are using a web service (like overleaf) then this usually happens
+automatically.</p>
+<p>Note, labels can be using in conjunction with <code>tabular</code> (for tables) and
+<code>figure</code> (for images) environments, these are called  "floats" and are a very
+useful feature of LaTeX but are not covered here.</p>
+<p>A full document with sections is:</p>
+<pre><code class="language-latex">\documentclass{article}
+
+\title{Sections}
+\author{V Knight}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{My first section}\label{first_section}
+
+This is a section with a few subsections.
+
+    \subsection{A part of my first section}
+
+    Here I could write about the problem I'm trying to solve.
+
+    \subsection{Another part of my first section}
+
+    In this subsection I could solve the problem.
+
+        \subsubsection{Further fragmentation...}
+
+\section{My second section}\label{second_section}
+
+In Section \ref{first_section} we saw that...
+\end{document}
+
+</code></pre>
+
+        
+        <a href="/tex/assets/tex/09-sections/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/09-sections/main.pdf">main.pdf</a>
+        
+        
+        <hr>
+    
+        <h3 id=10-bibliographies>Bibliographies</h3>
+<p>To create a bibliography we need to store the bibliographic information in a
+separate 'bibtex' file. In this file you include bibliographic information for
+the various references you might have.</p>
+<p>The following is the code for a book on LaTeX. Save the following in a
+separate file: <code>bibliography.bib</code>:</p>
+<pre><code class="language-latex">@book{Gratzer2007,
+    author = {Gr\&quot;{a}tzer, George},
+    publisher = {Springer},
+    title = {{More Math Into LaTeX: A Guide for Documentation and Presentation}},
+    year = {2007}
+}
+
+</code></pre>
+
+<p>We can then reference the 'key' (for the above it is Gratzer2007) for any
+document in the bibliography file using the following:</p>
+<p>A very helpful reference for LaTeX is \cite{Gratzer2007}.</p>
+<p>Note that there are a variety of tools that will give you bibtex code for
+any given reference (Google Scholar, JabRef, Zotero, Mendeley etc...).</p>
+<p>We need to however include a pointer towards the bibliography, at the end
+of the document include:</p>
+<pre><code class="language-latex">\bibliographystyle{plain}
+\bibliography{bibliography.bib}
+</code></pre>
+
+<p>We now need to compile a document twice (as above to find all internal
+references for sections, figure etc...) <strong>and then</strong> we compile the
+bibliography with <code>bibtex</code> and then we need to compile one last time to match
+the bibliography items with the citations.</p>
+<p><img class="u-small-width" src="/tex/assets/img/compilation-with-bibtex-diagram.png"></p>
+<p>If you are using overleaf then this happens automatically.</p>
+<p>A full document with sections is:</p>
+<pre><code class="language-latex">\documentclass{article}
+
+\title{Bibliographies}
+\author{V Knight}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+A very helpful reference for LaTeX is \cite{Gratzer2007}.
+
+\bibliographystyle{plain}
+\bibliography{bibliography.bib}
+\end{document}
+
+</code></pre>
+
+        
+        <a href="/tex/assets/tex/10-bibliographies/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/10-bibliographies/main.pdf">main.pdf</a>
+        
+        
+        <a href="/tex/assets/tex/10-bibliographies/main.tex">bibliography.bib</a>
+        
+        <hr>
+    
+        <h3 id=11-inline-mathematics>Inline mathematics</h3>
+<p>Typesetting mathematics is \(\LaTeX\)'s strength. Here is an example of
+including some "inline" mathematics:</p>
+<pre><code class="language-latex">Mathematics can be typed in to \LaTeX\ as $x^2$ and/or
+\((a+b)^2=a^2+2ab+b^2\).
+</code></pre>
+
+<p>Note that using <code>\(</code> and <code>\)</code> is preferred over <code>$</code>. One of the reasons is that
+it is easier for humans (and machines) to find the start and end of some
+mathematics.</p>
+<p>A full document making use of inline mathematics is:</p>
+<pre><code class="language-latex">\documentclass{article}
+
+\title{Inline mathematics}
+\author{V Knight}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+Mathematics can be typed in to \LaTeX\ as $x^2$ and/or \((a+b)^2=a^2+2ab+b^2\).
+\end{document}
+
+</code></pre>
+
+        
+        <a href="/tex/assets/tex/11-inline-mathematics/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/11-inline-mathematics/main.pdf">main.pdf</a>
+        
+        
+        <hr>
+    
+        <h3 id=12-display-mathematics>Displayed mathematics</h3>
+<p>To include mathematics in a "displayed" style use the following:</p>
+<pre><code class="language-latex">Here is an integral:
 
 \[
-x ^ 2 = 1
+    \int_{i=0}^{5}x ^ 2dx
+\]
+
+Here is a summation:
+
+$$
+    \sum_{i=1}^{n}i=\frac{n(n+1)}{2}
+$$
+</code></pre>
+
+<p>Note that using <code>\[</code> and <code>\]</code> is preferred over <code>$$</code>. One of the reasons is that
+it is easier for humans (and machines) to find the start and end of some
+mathematics.</p>
+<p>A full document making use of displayed mathematics is:</p>
+<pre><code class="language-latex">\documentclass{article}
+
+\title{Displayed mathematics}
+\author{V Knight}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+Here is an integral:
+
+\[
+    \int_{i=0}^{5}x ^ 2dx
+\]
+
+Here is a summation:
+
+$$
+    \sum_{i=1}^{n}i=\frac{n(n+1)}{2}
+$$
+\end{document}
+
+</code></pre>
+
+        
+        <a href="/tex/assets/tex/12-display-mathematics/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/12-display-mathematics/main.pdf">main.pdf</a>
+        
+        
+        <hr>
+    
+        <h3 id=13-equations>Equations</h3>
+<p>Mathematics can also be included in equations and referred to as for sections:</p>
+<pre><code class="language-latex">\begin{equation}\label{my_first_equation}
+e=mc^2
+\end{equation}
+
+In equation (\ref{my_first_equation}) we have a very well known relationship!
+</code></pre>
+
+<p>A full document making use of equations is:</p>
+<pre><code class="language-latex">\documentclass{article}
+
+\title{Equations}
+\author{V Knight}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{equation}\label{my_first_equation}
+    e=mc^2
+\end{equation}
+
+In equation (\ref{my_first_equation}) we have a very well known relationship.
+\end{document}
+
+</code></pre>
+
+        
+        <a href="/tex/assets/tex/13-equations/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/13-equations/main.pdf">main.pdf</a>
+        
+        
+        <hr>
+    
+        <h3 id=14-text-in-mathematics>Text in mathematics</h3>
+<p>To include text within mathematics we can use the <code>text</code> 
+command from the <code>amsmath</code> package:</p>
+<pre><code class="language-latex">\[
+    x^2 = 1 \text{ implies} x=\pm 1
+\]
+</code></pre>
+
+<p>Be sure to include <code>usepackage{amsmath}</code> in the preamble.</p>
+<p>Another command that does this is <code>mbox</code> which does not require the amsmath package.</p>
+<p>A full document making use of <code>\text</code> is:</p>
+<pre><code class="language-latex">\documentclass{article}
+
+\usepackage{amsmath}
+
+\title{Text within mathematics}
+\author{V Knight}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\[
+    x^2 = 1 \text{ implies} x=\pm 1
 \]
 \end{document}
 
 </code></pre>
 
-<p><a href="/tex/assets/tex/00/main.tex">main.tex</a>
-<a href="/tex/assets/tex/00/main.pdf">main.pdf</a></p>
-<p>Some mathematics: \( x^2 \)</p>
+        
+        <a href="/tex/assets/tex/14-text-in-mathematics/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/14-text-in-mathematics/main.pdf">main.pdf</a>
+        
+        
+        <hr>
+    
+        <h3 id=15-arithmetic-operators>Arithmetic operators</h3>
+<p>Arithmetic operators are available in \(\LaTeX\):</p>
+<pre><code class="language-latex">\begin{itemize}
+    \item \(a+b\)
+    \item \(a-b\)
+    \item \(-a\)
+    \item \(ab\)
+    \item \(a\cdot b\)
+    \item \(a\times b\)
+    \item \(a/b\)
+    \item \({a\over b}\)
+    \item \(\frac{a}{b}\)
+\end{itemize}
+</code></pre>
+
+<p>A full document showing these is:</p>
+<pre><code class="language-latex">\documentclass{article}
+
+\title{Arithmetic operators}
+\author{V Knight}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+    \item \(a+b\)
+    \item \(a-b\)
+    \item \(-a\)
+    \item \(ab\)
+    \item \(a\cdot b\)
+    \item \(a\times b\)
+    \item \(a/b\)
+    \item \({a\over b}\)
+    \item \(\frac{a}{b}\)
+\end{itemize}
+\end{document}
+
+</code></pre>
+
+        
+        <a href="/tex/assets/tex/15-arithmetic-operators/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/15-arithmetic-operators/main.pdf">main.pdf</a>
+        
+        
+        <hr>
+    
+        <h3 id=16-matrices>Matrices</h3>
+<p>The following code gives a 3 by 2 matrix:</p>
+<pre><code class="language-latex">\[
+    \begin{pmatrix}
+        a&amp;b\\
+        c&amp;d\\
+        e&amp;f\\
+    \end{pmatrix}
+\]
+</code></pre>
+
+<p>Note that this requires the <code>amsmath</code> package.</p>
+<p>Other types of matrices can be obtained used <code>\begin{matrix}</code> and
+<code>begin{vmatrix}</code>.</p>
+<p>A full document showing these is:</p>
+<pre><code class="language-latex">\documentclass{article}
+
+\usepackage{amsmath}
+
+\title{Matrices}
+\author{V Knight}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\[
+    \begin{pmatrix}
+        a&amp;b\\
+        c&amp;d\\
+        e&amp;f\\
+    \end{pmatrix}
+\]
+
+\[
+    \begin{matrix}
+        a&amp;b\\
+        c&amp;d\\
+        e&amp;f\\
+    \end{matrix}
+\]
+
+\[
+    \begin{vmatrix}
+        a&amp;b\\
+        c&amp;d\\
+        e&amp;f\\
+    \end{vmatrix}
+\]
+\end{document}
+
+</code></pre>
+
+        
+        <a href="/tex/assets/tex/16-matrices/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/16-matrices/main.pdf">main.pdf</a>
+        
+        
+        <hr>
+    
+        <h3 id=17-aligned-mathematics>Aligned mathematics</h3>
+<p>It is possible to create aligned mathematics using:</p>
+<pre><code class="language-latex">\begin{align}
+    (x+h)^2-x^2 &amp; =x^2+2xh+h^2-x^2 \nonumber\\
+                &amp; =2xh+h^2 \nonumber\\
+                &amp; =h(2x+h) \nonumber
+\end{align}
+</code></pre>
+
+<p>Note that this requires the <code>amsmath</code> package.</p>
+<p>Annotated text can also be added:</p>
+<pre><code class="language-latex">\begin{align}
+    (x+h)^2-x^2 &amp; = x^2+2xh+h^2-x^2 &amp;&amp; \text{(by distributivity)}\\
+                &amp; = 2xh+h^2         &amp;&amp; \text{(by subtraction)}\\
+                &amp; = h(2x+h)         &amp;&amp; \text{(by factorisation)}
+\end{align}
+</code></pre>
+
+<p>A full document showing these is:</p>
+<pre><code class="language-latex">\documentclass{article}
+
+\usepackage{amsmath}
+
+\title{Aligned mathematics}
+\author{V Knight}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+Some examples of aligned mathematics:
+
+\begin{align}
+    (x+h)^2-x^2 &amp; =x^2+2xh+h^2-x^2 \nonumber\\
+                &amp; =2xh+h^2 \nonumber\\
+                &amp; =h(2x+h) \nonumber
+\end{align}
+
+
+Some explanatory text:
+
+\begin{align}
+    (x+h)^2-x^2 &amp; = x^2+2xh+h^2-x^2 &amp;&amp; \text{(by distributivity)}\\
+                &amp; = 2xh+h^2         &amp;&amp; \text{(by subtraction)}\\
+                &amp; = h(2x+h)         &amp;&amp; \text{(by factorisation)}
+\end{align}
+\end{document}
+
+</code></pre>
+
+        
+        <a href="/tex/assets/tex/17-aligned-mathematics/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/17-aligned-mathematics/main.pdf">main.pdf</a>
+        
+        
+        <hr>
+    
+        <h3 id=18-partitioned-mathematics>Partitioned statements</h3>
+<p>It is possible to create partitioned statements for case dependent expressions:</p>
+<pre><code class="language-latex">\[
+    1 + (-1) ^ n =
+        \begin{cases}
+            0, &amp; \text{if \(n\) odd}\\
+            2, &amp; \text{if \(n\) even}
+        \end{cases}
+\]
+</code></pre>
+
+<p>Note that this requires the <code>amsmath</code> package.</p>
+<p>A full document showing this is:</p>
+<pre><code class="language-latex">\documentclass{article}
+
+\usepackage{amsmath}
+
+\title{Partitioned statements}
+\author{V Knight}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\[
+    1 + (-1) ^ n =
+        \begin{cases}
+            0, &amp; \text{if \(n\) odd}\\
+            2, &amp; \text{if \(n\) even}
+        \end{cases}
+\]
+\end{document}
+
+</code></pre>
+
+        
+        <a href="/tex/assets/tex/18-partitioned-mathematics/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/18-partitioned-mathematics/main.pdf">main.pdf</a>
+        
+        
+        <hr>
+    
+        <h3 id=19-presentations>Presentations</h3>
+<p>It is possible to create high quality presentations in \(LaTeX\). To do this
+we use the <code>beamer</code> document class:</p>
+<pre><code class="language-latex">\documentclass{beamer}
+\begin{document}
+
+\frame{This is my first slide.}
+
+\frame{This is my second slide.}
+
+\end{document}
+</code></pre>
+
+<p>It is possible to select from a number of different themes (and make your own):</p>
+<pre><code class="language-latex">\usetheme{default}
+\usetheme{Boadilla}
+\usetheme{Madrid}
+\usetheme{Montpellier}
+\usetheme{Warsaw}
+\usetheme{Copenhagen}
+\usetheme{Goettingen}
+\usetheme{Hannover}
+\usetheme{Berkeley}
+</code></pre>
+
+<p>A full document showing this is:</p>
+<pre><code class="language-latex">\documentclass{beamer}
+
+\usetheme{Boadilla}
+
+\begin{document}
+
+\frame{This is my first slide.}
+
+\frame{This is my second slide.}
+
+\end{document}
+
+</code></pre>
+
+        
+        <a href="/tex/assets/tex/19-presentations/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/19-presentations/main.pdf">main.pdf</a>
+        
+        
+        <hr>
+    
+        <h3 id=20-overlays-in-presentations>Titles and sections with presentations</h3>
+<p>Most of the LaTeX code you have learnt so far an be used without much change in
+a beamer presentation within the <code>frame</code> environment. There are however a few
+particularities:</p>
+<p>To make a title, you need to use the <code>\titlepage</code> instead of the <code>\maketitle</code> command:</p>
+<pre><code class="language-latex">\frame{
+    \titlepage
+}
+</code></pre>
+
+<p>We can also have frame titles and sections as before in a Beamer document:</p>
+<pre><code class="language-latex">\frame{\frametitle{Overview}
+    \tableofcontents
+}
+
+\section{Simple Beamer}
+\frame{\frametitle{My first slide}}
+</code></pre>
+
+<p>There are various other commands and tools that can be used in Beamer. In
+particular take a look at the <code>pause</code>, <code>only</code> and <code>onslide</code> commands.</p>
+<p>A full document showing this is:</p>
+<pre><code class="language-latex">\documentclass{beamer}
+
+\usetheme{Boadilla}
+
+\title{Beamer with sections and titles}
+\author{V Knight}
+\date{\today}
+
+
+\begin{document}
+
+\frame{
+    \titlepage
+}
+
+
+\frame{\frametitle{Overview}
+    \tableofcontents
+}
+
+\section{Simple Beamer}
+
+\frame{\frametitle{My first slide}}
+
+\end{document}
+
+</code></pre>
+
+        
+        <a href="/tex/assets/tex/20-overlays-in-presentations/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/20-overlays-in-presentations/main.pdf">main.pdf</a>
+        
+        
+        <hr>
+    
 
     </div>
 </body>
