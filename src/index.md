@@ -1,5 +1,7 @@
 ## Creating a basic document.
 
+<img class="u-full-width" src="{{root}}/assets/img/compile_diagram.png">
+
 ```language-latex
 {% include assets/tex/00/main.tex %}
 ```

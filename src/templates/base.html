@@ -2,8 +2,14 @@
 <html>
 <head>
   <title>Writing with LaTeX</title>
+  <!-- Mobile Specific Metas –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- CSS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="/{{root}}/assets/css/main.css">
+  <link rel="stylesheet" href="/{{root}}/assets/css/normalize.css">
+  <link rel="stylesheet" href="/{{root}}/assets/css/skeleton.css">
+
   <link rel="shortcut icon" type="image/png" href="/{{root}}/assets/favicon.ico"/>
 
   <link href="assets/css/prism.css" rel="stylesheet" />
@@ -31,16 +37,17 @@
 </head>
 <body>
 
-    {% include "header.html" %}
+    <div class="container">
+		<section class="header">
+		<h1 class="title">Writing with \(\LaTeX\)</h1>
+		</section>
+    </div>
 
- <div class="page-content">
-    <div class="wrap">
-      <div class="home">
+	<div class="container">
         {% block body %}
         {% endblock %}
-      </div>
-  </div>
-</div>
+    </div>
+</body>
 
 
 </body>
