@@ -16,7 +16,7 @@ There are various ways to obtain lists:
 \end{enumerate}
 ```
 
-Your full document will now look like:
+A full document with both these lists is:
 
 ```language-latex
 {% include main.tex %}

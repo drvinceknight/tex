@@ -58,6 +58,14 @@
               
               <li><a href="#05-lists">Lists</a></li>
               
+              <li><a href="#06-tables">Tables</a></li>
+              
+              <li><a href="#07-including-pictures">Including pictures</a></li>
+              
+              <li><a href="#08-drawing-pictures">Drawing pictures</a></li>
+              
+              <li><a href="#09-sections">Sections</a></li>
+              
             </ul>
       </nav>
 
@@ -222,23 +230,16 @@ Hello, world!
 \end{enumerate}
 </code></pre>
 
-<p>Your full document will now look like:</p>
-<pre><code class="language-latex">\documentclass{article} % There are various classes of documents, we will see a few later.
+<p>A full document with both these lists is:</p>
+<pre><code class="language-latex">\documentclass{article}
 
-\title{Choose a title}
+\title{Writing lists}
 \author{V Knight}
 \date{\today}
 
-\begin{document} % This line start the document
-
-\begin{abstract}
-    This document contains some basic LaTeX code that will be useful to me
-    in the future.
-\end{abstract}
+\begin{document}
 
 \maketitle
-
-Hello, world!
 
 \begin{itemize}
     \item Unordered item number 1
@@ -260,6 +261,265 @@ LaTeX they are ended by specific end statements <code>\end{enumerate}</code>.</p
         
         <a href="/tex/assets/tex/05-lists/main.tex">main.tex</a>
         <a href="/tex/assets/tex/05-lists/main.pdf">main.pdf</a>
+        
+        <hr>
+    
+        <h3 id=06-tables>Tables</h3>
+<p>The following code creates a simple table (note the <code>c</code>, <code>r</code>, and <code>l</code> tags that
+indicate text alignment, experiment by changing these):</p>
+<pre><code class="language-latex">\begin{tabular}{|l|c|r|}
+    \hline
+    Name &amp; Gender &amp; Start Time\\
+    \hline
+    Angelico &amp; Male &amp; 1100\\
+    \hline
+    Leanne &amp; Female &amp; 0830\\
+    \hline
+    Lisa &amp; Female &amp; 0730\\
+    \hline
+\end{tabular}
+</code></pre>
+
+<p>A full document with this table is:</p>
+<pre><code class="language-latex">\documentclass{article}
+
+\title{Tables}
+\author{V Knight}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{tabular}{|l|c|r|}
+    \hline
+    Name &amp; Gender &amp; Start Time\\
+    \hline
+    Angelico &amp; Male &amp; 1100\\
+    \hline
+    Leanne &amp; Female &amp; 0830\\
+    \hline
+    Lisa &amp; Female &amp; 0730\\
+    \hline
+\end{tabular}
+
+\end{document}
+
+</code></pre>
+
+<p>In general in LaTeX <code>\\</code> is used to denote a 'new line'.</p>
+
+        
+        <a href="/tex/assets/tex/06-tables/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/06-tables/main.pdf">main.pdf</a>
+        
+        <hr>
+    
+        <h3 id=07-including-pictures>Including pictures</h3>
+<p>To include a picture is straightforward in LaTeX. We make use of the <code>graphicx</code>
+package. In LaTeX packages are included in the preamble using <code>usepackage</code>.
+Include the following in the preamble:</p>
+<pre><code class="language-latex">\usepackage{graphicx}
+</code></pre>
+
+<p>The following code (somewhere in the body) will include a picture:</p>
+<pre><code class="language-latex">\includegraphics{path_to_picture}
+</code></pre>
+
+<p>We can put this in the <code>center</code> environment to centre the picture:</p>
+<pre><code class="language-latex">\begin{center}
+    \includegraphics{path_to_picture}
+\end{center}
+</code></pre>
+
+<p>We can also pass options to <code>includegraphics</code> to specify the width. For example,
+this ensures the picture will be 60% of the width of the page:</p>
+<pre><code class="language-latex">\begin{center}
+    \includegraphics[width=.6\textwidth]{path_to_picture}
+\end{center}
+</code></pre>
+
+<p>Here is an example image:</p>
+<p>Images can be in jpg, png and
+pdf format when using a modern compiler, here is a picture as an example:
+<a href="/tex/assets/tex/07-including-pictures/dog.jpg">dog.jpg</a>.</p>
+<p>A full document with that images is:</p>
+<pre><code class="language-latex">\documentclass{article}
+
+\usepackage{graphicx}
+
+\title{Including images}
+\author{V Knight}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+    \includegraphics[width=.6\textwidth]{dog.jpg}
+\end{center}
+
+\end{document}
+
+</code></pre>
+
+        
+        <a href="/tex/assets/tex/07-including-pictures/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/07-including-pictures/main.pdf">main.pdf</a>
+        
+        <hr>
+    
+        <h3 id=08-drawing-pictures>Drawing pictures</h3>
+<p>Graphs, pictures and diagrams can thus be created in any software of choice
+(Python, inkscape, etc...) and then included as required <strong>but</strong> it
+is often easier to draw a picture in LaTeX itself using code. A great package
+to do this with is <code>tikz</code>. Include the following in the preamble:</p>
+<pre><code class="language-latex">\usepackage{tikz}
+</code></pre>
+
+<p>Using this package we start a picture by setting up a tikzpicture environment.</p>
+<pre><code class="language-latex">\begin{tikzpicture}
+
+\end{tikzpicture}
+</code></pre>
+
+<p>We then draw various shapes and connectors using the <code>\draw</code> command including
+coordinates:</p>
+<pre><code class="language-latex">\begin{tikzpicture}
+    \draw (0,0) -- (0,2); % This draws a line from (0,0) to (0,2)
+    \draw (-1,1) -- (1,1); % This draws a line from (-1,1) to (1,1)
+    \draw (0,0) -- (1,-1); % This draws a line from (0,0) to (1,-1)
+    \draw (0,0) -- (-1,-1); % This draws a line from (0,0) to (-1,-1)
+    \draw (0,2.5) circle(.5); % This draws a circle at (0,2.5) with radius .5
+\end{tikzpicture}
+</code></pre>
+
+<p>This is very much touching the surface of what can be down with tikz. The
+simplest next step is to include various color and thickness options (we can
+also center the drawing):</p>
+<pre><code class="language-latex">\begin{center}
+    \begin{tikzpicture}
+        \draw [ultra thick] (0,0) -- (0,2); % This draws a line from (0,0) to (0,2)
+        \draw [thin, color=blue] (-1,1) -- (1,1); % This draws a line from (-1,1) to (1,1)
+        \draw [thick] (0,0) -- (1,-1); % This draws a line from (0,0) to (1,-1)
+        \draw [thick] (0,0) -- (-1,-1); % This draws a line from (0,0) to (-1,-1)
+        \draw [color=red, fill=green] (0,2.5) circle(.5); % This draws a circle at (0,2.5) with radius .5
+    \end{tikzpicture}
+\end{center}
+</code></pre>
+
+<p>A lot more can be done with tikz and there are a variety of great examples,
+tutorials online.</p>
+<p>A full document with that images is:</p>
+<pre><code class="language-latex">\documentclass{article} 
+
+\usepackage{tikz}
+
+\title{Drawing with tikz}
+\author{V Knight}
+\date{\today}
+
+\begin{document} 
+
+\maketitle
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw [ultra thick] (0,0) -- (0,2); % This draws a line from (0,0) to (0,2)
+        \draw [thin, color=blue] (-1,1) -- (1,1); % This draws a line from (-1,1) to (1,1)
+        \draw [thick] (0,0) -- (1,-1); % This draws a line from (0,0) to (1,-1)
+        \draw [thick] (0,0) -- (-1,-1); % This draws a line from (0,0) to (-1,-1)
+        \draw [color=red, fill=green] (0,2.5) circle(.5); % This draws a circle at (0,2.5) with radius .5
+    \end{tikzpicture}
+\end{center}
+
+\end{document}
+
+</code></pre>
+
+        
+        <a href="/tex/assets/tex/08-drawing-pictures/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/08-drawing-pictures/main.pdf">main.pdf</a>
+        
+        <hr>
+    
+        <h3 id=09-sections>Sections</h3>
+<p>It is possible to organise parts of a document using 'sections':</p>
+<pre><code class="language-latex">\section{My first section}
+
+This is a section with a few subsections.
+
+    \subsection{A part of my first section}
+
+    Here I could write about the problem I'm trying to solve.
+
+    \subsection{Another part of my first section}
+
+    In this subsection I could solve the problem.
+
+        \subsubsection{Further fragmentation...}
+
+\section{My second section}
+
+etc...
+</code></pre>
+
+<p>We can include labels to sections so that we can refer to them:</p>
+<pre><code class="language-latex">\section{My first section}\label{first_section}
+
+\section{My second section}\label{second_section}
+
+In Section \ref{first_section} we saw that...
+</code></pre>
+
+<p>When compiling one needs to compile twice:</p>
+<ol>
+<li>The first time to find all the labels;</li>
+<li>The second time to match the labels to the references.</li>
+</ol>
+<p>If you are using a web service (like overleaf) then this usually happens
+automatically.</p>
+<p>Note, labels can be using in conjunction with <code>tabular</code> (for tables) and
+<code>figure</code> (for images) environments, these are called  "floats" and are a very
+useful feature of LaTeX but are not covered here.</p>
+<p>A full document with sections is:</p>
+<pre><code class="language-latex">\documentclass{article}
+
+\usepackage{tikz}
+
+\title{Sections}
+\author{V Knight}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{My first section}\label{first_section}
+
+This is a section with a few subsections.
+
+    \subsection{A part of my first section}
+
+    Here I could write about the problem I'm trying to solve.
+
+    \subsection{Another part of my first section}
+
+    In this subsection I could solve the problem.
+
+        \subsubsection{Further fragmentation...}
+
+\section{My second section}\label{second_section}
+
+In Section \ref{first_section} we saw that...
+\end{document}
+
+</code></pre>
+
+        
+        <a href="/tex/assets/tex/09-sections/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/09-sections/main.pdf">main.pdf</a>
         
         <hr>
     

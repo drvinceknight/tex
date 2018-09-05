@@ -1,0 +1,23 @@
+\documentclass{article} 
+
+\usepackage{tikz}
+
+\title{Drawing with tikz}
+\author{V Knight}
+\date{\today}
+
+\begin{document} 
+
+\maketitle
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw [ultra thick] (0,0) -- (0,2); % This draws a line from (0,0) to (0,2)
+        \draw [thin, color=blue] (-1,1) -- (1,1); % This draws a line from (-1,1) to (1,1)
+        \draw [thick] (0,0) -- (1,-1); % This draws a line from (0,0) to (1,-1)
+        \draw [thick] (0,0) -- (-1,-1); % This draws a line from (0,0) to (-1,-1)
+        \draw [color=red, fill=green] (0,2.5) circle(.5); % This draws a circle at (0,2.5) with radius .5
+    \end{tikzpicture}
+\end{center}
+
+\end{document}
