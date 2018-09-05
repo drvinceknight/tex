@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block header %}
+      <a class="logo">Writing with \(\LaTeX\)</a>
+      <input id="nav" type="checkbox">
+      <label for="nav"></label>
+      <nav>
+            <ul>
+              {% for chapter in chapters %}
+              <li><a href="#{{ chapter.stem }}">{{ chapter.title }}</a></li>
+              {% endfor %}
+            </ul>
+      </nav>
+{% endblock %}
+
+{% block body %}
+    {% for chapter in chapters %}
+        {{ chapter.content }}
+
+        {% if chapter.source %}
+        <a href="/{{root}}/assets/tex/{{ chapter.stem }}/main.tex">main.tex</a>
+        <a href="/{{root}}/assets/tex/{{ chapter.stem }}/main.pdf">main.pdf</a>
+        {% endif %}
+        <hr>
+    {% endfor %}
+{% endblock %}

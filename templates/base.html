@@ -39,19 +39,8 @@
 <body>
 
     <header>
-      <a class="logo">Writing with \(\LaTeX\)</a>
-      <input id="nav" type="checkbox">
-      <label for="nav"></label>
-      <nav>
-            <ul>
-              <li><a href="#about-latex">About \(\LaTeX\)</a></li>
-              <li><a href="#a-basic-document">A basic document</a></li>
-              <li><a href="#special-characters">Special characters</a></li>
-              <li><a href="#the-preamble">The preamble</a></li>
-              <li><a href="#an-abstract">An abstract</a></li>
-              <li><a href="#lists">Lists</a></li>
-            </ul>
-      </nav>
+       {% block header %}
+       {% endblock %}
     </header>
 
 	<div class="container">
