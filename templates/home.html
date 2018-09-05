@@ -21,6 +21,9 @@
         <a href="/{{root}}/assets/tex/{{ chapter.stem }}/main.tex">main.tex</a>
         <a href="/{{root}}/assets/tex/{{ chapter.stem }}/main.pdf">main.pdf</a>
         {% endif %}
+        {% if chapter.bib_source %}
+        <a href="/{{root}}/assets/tex/{{ chapter.stem }}/main.tex">bibliography.bib</a>
+        {% endif %}
         <hr>
     {% endfor %}
 {% endblock %}

@@ -15,7 +15,8 @@ ROOT = "tex"
 Chapter = collections.namedtuple("chapter", ["content", 
                                              "title", 
                                              "stem", 
-                                             "source"])
+                                             "source",
+                                             "bib_source"])
 
 def render_template(template_file, template_vars, output_path, ROOT=ROOT):
     """
@@ -59,7 +60,8 @@ def make_index(src, out):
         content, title = obtain_html_and_title(chapter_path)
         stem = chapter_path.stem
         source = (chapter_path / "main.tex").is_file()
-        chapters.append(Chapter(content, title, stem, source))
+        bib_source = (chapter_path / "bibliography.bib").is_file()
+        chapters.append(Chapter(content, title, stem, source, bib_source))
     render_template(template_file="home.html",
                     template_vars={"chapters": chapters},
                     output_path=out / "index.html")
