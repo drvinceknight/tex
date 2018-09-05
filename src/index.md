@@ -5,7 +5,7 @@
 ```
 
 [main.tex]({{root}}/assets/tex/00/main.tex)
-[main.pdf]({{root}}assets/tex/00/main.pdf)
+[main.pdf]({{root}}/assets/tex/00/main.pdf)
 
 ## Here is another file
 
@@ -14,6 +14,6 @@
 ```
 
 [main.tex]({{root}}/assets/tex/00/main.tex)
-[main.pdf]({{root}}assets/tex/00/main.pdf)
+[main.pdf]({{root}}/assets/tex/00/main.pdf)
 
 Some mathematics: \\( x^2 \\)
