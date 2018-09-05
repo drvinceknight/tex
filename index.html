@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="/tex/assets/css/main.css">
   <link rel="stylesheet" href="/tex/assets/css/normalize.css">
   <link rel="stylesheet" href="/tex/assets/css/skeleton.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <link rel="shortcut icon" type="image/png" href="/tex/assets/favicon.ico"/>
 
@@ -37,16 +38,76 @@
 </head>
 <body>
 
-    <div class="container">
-		<section class="header">
-		<h1 class="title">Writing with \(\LaTeX\)</h1>
-		</section>
-    </div>
+    <header>
+      <a class="logo">Writing with \(\LaTeX\)</a>
+      <input id="nav" type="checkbox">
+      <label for="nav"></label>
+      <nav>
+            <ul>
+              <li><a href="#about-latex">About \(\LaTeX\)</a></li>
+              <li><a href="#a-basic-document">A basic document</a></li>
+              <li><a href="#special-characters">Special characters</a></li>
+              <li><a href="#the-preamble">The preamble</a></li>
+              <li><a href="#an-abstract">An abstract</a></li>
+              <li><a href="#lists">Lists</a></li>
+            </ul>
+      </nav>
+    </header>
 
 	<div class="container">
         
-    <h2>Creating a basic document.</h2>
+    <h3 id="about-latex">About \(\LaTeX\)</h3>
+
+<p>A typesetting language is a language that requires the user to write code that
+is then 'translated' to a form that is 'human readable'.</p>
 <p><img class="u-full-width" src="/tex/assets/img/compile_diagram.png"></p>
+<p>A powerful typesetting language that is popular in scientific writing is
+\(\LaTeX\) (pronounced: lay-tech).</p>
+<p>This resource gives an overview of \(\LaTeX\): you can either install
+\(\LaTeX\) on your own computer:</p>
+<ul>
+<li><a href="http://miktex.org/">MikTeX</a> on windows </li>
+<li><a href="https://tug.org/mactex/">MacTeX</a> on OS X</li>
+</ul>
+<p>If you do not already have an installed version I recommend
+<a href="https://www.overleaf.com/">overleaf.com</a> a cloud based service.</p>
+<hr />
+<h3 id="a-basic-document">A basic document</h3>
+
+<p>In the editor type the following:</p>
+<pre><code class="language-latex">\documentclass{article}
+
+
+\begin{document}
+Hello, world!
+\end{document}
+
+</code></pre>
+
+<p>The next step is to <em>compile</em> this <code>tex</code> file.  For the purposes of this
+tutorial I recommend compiling with a modern compiler like <code>pdflatex</code> or
+<code>xelatex</code>. <strong>If you are using a cloud based service compilation usually happens
+automatically.</strong></p>
+<p><a href="/tex/assets/tex/00/main.tex">main.tex</a>
+<a href="/tex/assets/tex/00/main.pdf">main.pdf</a></p>
+<hr />
+<h3 id="special-characters">Special characters</h3>
+
+<p>The following keys are used to type text in a source file:</p>
+<pre><code class="language-latex">a-z A-Z 0-9
++ = * / ( ) [ ]
+</code></pre>
+
+<p>The following punctuation marks:</p>
+<pre><code class="language-latex">' ? ! : ` ' -
+</code></pre>
+
+<p>Finally there are 13 special keys that are used in commands:</p>
+<pre><code class="language-latex"># $ % &amp; ~ _ ^ \ { } @ &quot; |
+</code></pre>
+
+<p>For example, <code>%</code> sign is used to denote comments in LaTeX (like <code>#</code> in Python). 
+Modify your \(\LaTeX\) file so it looks like:</p>
 <pre><code class="language-latex">\documentclass{article} % There are various classes of documents, we will see
                         % one for creating presentations later
 
@@ -58,25 +119,129 @@ Hello, world!
 
 <p><a href="/tex/assets/tex/00/main.tex">main.tex</a>
 <a href="/tex/assets/tex/00/main.pdf">main.pdf</a></p>
-<h2>Here is another file</h2>
+<hr />
+<h3 id="the-preamble">The preamble</h3>
+
+<p>In general all the code that comes before the <code>\begin{document}</code> statement is
+called the 'preamble' and is used to set a title for the document, call certain
+packages as well as various other things. The following code (to be inserted in
+the preamble of your document) sets a title:</p>
+<pre><code class="language-latex">\title{Choose a title}
+\author{V Knight}
+\date{\today}
+</code></pre>
+
+<p>If you compile your document this won't include the title in the output. To do
+so you need to include the following line (in the main body):</p>
+<pre><code class="language-latex">\maketitle
+</code></pre>
+
+<p>Here is what your document should look like:</p>
 <pre><code class="language-latex">\documentclass{article} % There are various classes of documents, we will see
                         % one for creating presentations later
 
+\title{Choose a title}
+\author{V Knight}
+\date{\today}
+
 \begin{document} % This line start the document
+
+\maketitle
+
 Hello, world!
-
-Here is an equation:
-
-\[
-x ^ 2 = 1
-\]
 \end{document}
 
 </code></pre>
 
-<p><a href="/tex/assets/tex/00/main.tex">main.tex</a>
-<a href="/tex/assets/tex/00/main.pdf">main.pdf</a></p>
-<p>Some mathematics: \( x^2 \)</p>
+<p><a href="/tex/assets/tex/02/main.tex">main.tex</a>
+<a href="/tex/assets/tex/02/main.pdf">main.pdf</a></p>
+<hr />
+<h3 id="an-abstract">An abstract</h3>
+
+<p>The following will add an abstract to your document:</p>
+<pre><code class="language-latex">\begin{abstract}
+This document contains some basic LaTeX code that will be useful to me in the future.
+\end{abstract}
+</code></pre>
+
+<p>Here is what your document should look like:</p>
+<pre><code class="language-latex">\documentclass{article} % There are various classes of documents, we will see
+                        % one for creating presentations later
+
+\title{Choose a title}
+\author{V Knight}
+\date{\today}
+
+\begin{document} % This line start the document
+
+\begin{abstract}
+This document contains some basic LaTeX code that will be useful to me in the future.
+\end{abstract}
+
+
+\maketitle
+
+Hello, world!
+\end{document}
+
+</code></pre>
+
+<p><a href="/tex/assets/tex/03/main.tex">main.tex</a>
+<a href="/tex/assets/tex/03/main.pdf">main.pdf</a></p>
+<hr />
+<h3 id="lists">Lists</h3>
+
+<p>There are various ways to obtain lists:</p>
+<pre><code class="language-latex">\begin{itemize}
+    \item Unordered item number 1
+    \item Unordered item number 2
+\end{itemize}
+</code></pre>
+
+<pre><code class="language-latex">\begin{enumerate}
+    \item Ordered item number 1
+    \item Ordered item number 2
+\end{enumerate}
+</code></pre>
+
+<p>Note that in LaTeX indentation is not required it is just good practice. If you
+are used to a language like Python where specific environments are delimited by
+indentation levels, in LaTeX they are ended by specific end statements
+<code>\end{enumerate}</code>.</p>
+<p>Here is what your document should look like:</p>
+<pre><code class="language-latex">\documentclass{article} % There are various classes of documents, we will see
+                        % one for creating presentations later
+
+\title{Choose a title}
+\author{V Knight}
+\date{\today}
+
+\begin{document} % This line start the document
+
+\begin{abstract}
+This document contains some basic LaTeX code that will be useful to me in the future.
+\end{abstract}
+
+
+\maketitle
+
+Hello, world!
+
+\begin{itemize}
+    \item Unordered item number 1
+    \item Unordered item number 2
+\end{itemize}
+
+\begin{enumerate}
+    \item Ordered item number 1
+    \item Ordered item number 2
+\end{enumerate}
+\end{document}
+
+</code></pre>
+
+<p><a href="/tex/assets/tex/04/main.tex">main.tex</a>
+<a href="/tex/assets/tex/04/main.pdf">main.pdf</a></p>
 
     </div>
 </body>
