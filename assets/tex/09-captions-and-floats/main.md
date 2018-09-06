@@ -1,55 +1,63 @@
-### Drawing pictures
+### Floats and captions
 
-Graphs, pictures and diagrams can thus be created in any software of choice
-(Python, inkscape, etc...) and then included as required **but** it
-is often easier to draw a picture in LaTeX itself using code. A great package
-to do this with is `tikz`. Include the following in the preamble:
+When including images, pictures and tables it is beneficial to make them
+standalone objects that can be referred to throughout the text. This is done in
+\\(\LaTeX\\) using the concepts of "floats".
 
-```language-latex
-\usepackage{tikz}
-```
-
-Using this package we start a picture by setting up a tikzpicture environment.
+Pictures and diagrams are figures:
 
 ```language-latex
-\begin{tikzpicture}
+Figure~\ref{my_picture} shows a picture.
 
-\end{tikzpicture}
+\begin{figure}
+    \begin{center}
+        \includegraphics{path_to_picture}
+    \end{center}
+    \caption{A picture}
+    \label{my_picture}
+\end{figure}
 ```
 
-We then draw various shapes and connectors using the `\draw` command including
-coordinates:
+Tables are (surprisingly) tables:
 
 ```language-latex
-\begin{tikzpicture}
-	\draw (0,0) -- (0,2); % This draws a line from (0,0) to (0,2)
-	\draw (-1,1) -- (1,1); % This draws a line from (-1,1) to (1,1)
-	\draw (0,0) -- (1,-1); % This draws a line from (0,0) to (1,-1)
-	\draw (0,0) -- (-1,-1); % This draws a line from (0,0) to (-1,-1)
-	\draw (0,2.5) circle(.5); % This draws a circle at (0,2.5) with radius .5
-\end{tikzpicture}
+Table~\ref{my_table} shows a table.
+
+
+\begin{table}
+    \begin{center}
+        \begin{tabular}{|l|c|r|}
+            \hline
+            Name & Gender & Start Time\\
+            \hline
+            Angelico & Male & 1100\\
+            \hline
+            Leanne & Female & 0830\\
+            \hline
+            Lisa & Female & 0730\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \caption{A table}
+    \label{my_table}
+\end{table}
 ```
 
-This is very much touching the surface of what can be down with tikz. The
-simplest next step is to include various color and thickness options (we can
-also center the drawing):
+Note that these are called "floats" because they are designed to move in the
+document to ensure the best use of space. As a result of this it is good
+practice to not refer to floats by relative position. For example do not use:
+"in the picture below" but "in Figure~\ref{my_picture}".
 
-```language-latex
-\begin{center}
-	\begin{tikzpicture}
-		\draw [ultra thick] (0,0) -- (0,2); % This draws a line from (0,0) to (0,2)
-		\draw [thin, color=blue] (-1,1) -- (1,1); % This draws a line from (-1,1) to (1,1)
-		\draw [thick] (0,0) -- (1,-1); % This draws a line from (0,0) to (1,-1)
-		\draw [thick] (0,0) -- (-1,-1); % This draws a line from (0,0) to (-1,-1)
-		\draw [color=red, fill=green] (0,2.5) circle(.5); % This draws a circle at (0,2.5) with radius .5
-	\end{tikzpicture}
-\end{center}
-```
+\\(LaTeX\\) will aim to place floats in an efficient manner however some of the
+rules it follows can be broken by passing the following options:
 
-A lot more can be done with tikz and there are a variety of great examples,
-tutorials online.
+- `h`: try to place the float where it is indicated by the code.
+- `t`: the float can be allowed in the top of the page.
+- `b`: the float can be allowed in the bottom of the page.
+- `p`: the float can be allowed on a page or column by itself.
+- `!`: some further restrictions should be ignored.
 
-A full document with that images is:
+A full document with a figure and a table, using all those options is:
 
 ```language-latex
 {% include main.tex %}
