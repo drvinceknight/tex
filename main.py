@@ -12,9 +12,13 @@ import jinja2
 import markdown
 
 ROOT = "tex"
-Chapter = collections.namedtuple("chapter", ["content", 
-                                             "title", 
-                                             "stem", 
+TITLE = "Writing with \\(LaTeX\\)"
+DESCRIPTION = "A tutorial based on a set of minimal examples."
+KEYWORDS = "Latex, overleaf"
+AUTHOR = "Vince Knight"
+Chapter = collections.namedtuple("chapter", ["content",
+                                             "title",
+                                             "stem",
                                              "source",
                                              "bib_source"])
 
@@ -25,8 +29,6 @@ def render_template(template_file, template_vars, output_path, ROOT=ROOT):
     templateLoader = jinja2.FileSystemLoader(searchpath="./templates/")
     template_env = jinja2.Environment(loader=templateLoader)
     template = template_env.get_template(template_file)
-    if "root" not in template_vars:
-        template_vars["root"] = ROOT
     output_path.write_text(template.render(template_vars))
 
 def obtain_html_and_title(path, ROOT=ROOT):
@@ -63,7 +65,13 @@ def make_index(src, out):
         bib_source = (chapter_path / "bibliography.bib").is_file()
         chapters.append(Chapter(content, title, stem, source, bib_source))
     render_template(template_file="home.html",
-                    template_vars={"chapters": chapters},
+                    template_vars={"chapters": chapters,
+                                   "author": AUTHOR,
+                                   "title": TITLE,
+                                   "description": DESCRIPTION,
+                                   "keywords": KEYWORDS,
+                                   "root": ROOT,
+                                   },
                     output_path=out / "index.html")
 
 

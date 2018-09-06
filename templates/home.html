@@ -1,7 +1,14 @@
 {% extends "base.html" %}
 
 {% block header %}
-      <a class="logo">Writing with \(\LaTeX\)</a>
+    <div class="row">
+        <div class="three.columns">
+            <a class="logo" href=".">{{ title }}</a>
+        </div>
+        <div class="eight.columns">
+            <a class="logo">{{ description }}</a>
+        </div>
+        <div class="one.column">
       <input id="nav" type="checkbox">
       <label for="nav"></label>
       <nav>
@@ -11,6 +18,8 @@
               {% endfor %}
             </ul>
       </nav>
+        </div>
+    </div>
 {% endblock %}
 
 {% block body %}
