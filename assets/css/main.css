@@ -216,31 +216,3 @@ nav a {
 #nav:checked ~ nav {
   max-height: 2000px; /* This can be anything bigger than your nav height. The transition duration works with this */
 }
-
-@media only screen and (min-width: 700px) {
-
-  header label { display: none; }
-
-  nav {
-    width: auto;
-    max-height: none;
-  }
-
-  nav ul {
-    padding: 0;
-    padding-right: 10px;
-  }
-
-  nav li {
-    display: inline-block;
-    text-align: left;
-  }
-
-  header nav a {
-    display: inline-block;
-    padding: 20px 10px;
-    width: auto;
-  }
-
-}
-
