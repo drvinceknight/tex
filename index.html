@@ -310,23 +310,40 @@ LaTeX they are ended by specific end statements <code>\end{enumerate}</code>.</p
         <hr>
     
         <h3 id=06-tables>Tables</h3>
+<p>(Keywords: tables, tabular, booktabs.)</p>
 <p>The following code creates a simple table (note the <code>c</code>, <code>r</code>, and <code>l</code> tags that
 indicate text alignment, experiment by changing these):</p>
 <pre><code class="language-latex">\begin{tabular}{|l|c|r|}
     \hline
-    Name &amp; Gender &amp; Start Time\\
+    Name     &amp; Gender &amp; Start Time\\
     \hline
-    Angelico &amp; Male &amp; 1100\\
+    Angelico &amp; Male   &amp; 1100\\
     \hline
-    Leanne &amp; Female &amp; 0830\\
+    Leanne   &amp; Female &amp; 0830\\
     \hline
-    Lisa &amp; Female &amp; 0730\\
+    Lisa     &amp; Female &amp; 0730\\
     \hline
+\end{tabular}
+</code></pre>
+
+<p>The above makes use of the basic tables available in \(\LaTeX\). The
+<code>booktabs</code> packages allows for improved aesthetics. To use this requires
+<code>\usepackage{booktabs}</code> in the preamble:</p>
+<pre><code class="language-latex">\begin{tabular}{l|c|r|}
+    \toprule
+    Name        &amp; Gender &amp; Start Time\\
+    \midrule
+    Angelico    &amp; Male   &amp; 1100\\
+    Leanne      &amp; Female &amp; 0830\\
+    Lisa        &amp; Female &amp; 0730\\
+    \bottomrule
 \end{tabular}
 </code></pre>
 
 <p>A full document with this table is:</p>
 <pre><code class="language-latex">\documentclass{article}
+
+\usepackage{booktabs}
 
 \title{Tables}
 \author{V Knight}
@@ -336,16 +353,30 @@ indicate text alignment, experiment by changing these):</p>
 
 \maketitle
 
+A normal table:
+
 \begin{tabular}{|l|c|r|}
     \hline
-    Name &amp; Gender &amp; Start Time\\
+    Name     &amp; Gender &amp; Start Time\\
     \hline
-    Angelico &amp; Male &amp; 1100\\
+    Angelico &amp; Male   &amp; 1100\\
     \hline
-    Leanne &amp; Female &amp; 0830\\
+    Leanne   &amp; Female &amp; 0830\\
     \hline
-    Lisa &amp; Female &amp; 0730\\
+    Lisa     &amp; Female &amp; 0730\\
     \hline
+\end{tabular}
+
+A table with the booktabs package:
+
+\begin{tabular}{l|c|r|}
+    \toprule
+    Name        &amp; Gender &amp; Start Time\\
+    \midrule
+    Angelico    &amp; Male   &amp; 1100\\
+    Leanne      &amp; Female &amp; 0830\\
+    Lisa        &amp; Female &amp; 0730\\
+    \bottomrule
 \end{tabular}
 
 \end{document}
@@ -493,6 +524,7 @@ tutorials online.</p>
         <hr>
     
         <h3 id=09-captions-and-floats>Floats and captions</h3>
+<p>(Keywords: floats, moving figures, moving tables.)</p>
 <p>When including images, pictures and tables it is beneficial to make them
 standalone objects that can be referred to throughout the text. This is done in
 \(\LaTeX\) using the concepts of "floats".</p>
@@ -514,16 +546,14 @@ standalone objects that can be referred to throughout the text. This is done in
 
 \begin{table}
     \begin{center}
-        \begin{tabular}{|l|c|r|}
-            \hline
-            Name &amp; Gender &amp; Start Time\\
-            \hline
-            Angelico &amp; Male &amp; 1100\\
-            \hline
-            Leanne &amp; Female &amp; 0830\\
-            \hline
-            Lisa &amp; Female &amp; 0730\\
-            \hline
+        \begin{tabular}{l|c|r|}
+            \toprule
+            Name        &amp; Gender &amp; Start Time\\
+            \midule
+            Angelico    &amp; Male   &amp; 1100\\
+            Leanne      &amp; Female &amp; 0830\\
+            Lisa        &amp; Female &amp; 0730\\
+            \bottomrule
         \end{tabular}
     \end{center}
     \caption{A table}
@@ -548,6 +578,7 @@ rules it follows can be broken by passing the following options:</p>
 <pre><code class="language-latex">\documentclass{article} 
 
 \usepackage{graphicx}
+\usepackage{booktabs}
 
 \title{Captions and floats}
 \author{V Knight}
@@ -569,21 +600,17 @@ Figure~\ref{my_picture} shows a cat.
 
 Table~\ref{my_table} shows a table.
 
-
 \begin{table}[!hbtp]
     \begin{center}
         \begin{tabular}{|l|c|}
-            \hline
-            Name &amp; Animal \\
-            \hline
-            Auraya &amp; dog \\
-            \hline
-            Chick &amp; cat \\
-            \hline
-            Duck &amp; cat \\
-            \hline
+            \toprule
+            Name    &amp; Animal \\
+            \midrule
+            Auraya  &amp; dog \\
+            Chick   &amp; cat \\
+            Duck    &amp; cat \\
             Riggins &amp; dog \\
-            \hline
+            \bottomrule
         \end{tabular}
     \end{center}
     \caption{A table of pets}
@@ -1258,6 +1285,7 @@ particular take a look at the <code>pause</code>, <code>only</code> and <code>on
   \(\LaTeX\)</a></li>
 <li><a href="https://drvinceknight.blogspot.com/2013/12/explaining-floats-in-latex.html">A blog post about moving
   floats</a></li>
+<li><a href="https://www.inf.ethz.ch/personal/markusp/teaching/guides/guide-tables.pdf">Small Guide to Making Nice Tables</a></li>
 </ul>
 
         
