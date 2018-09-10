@@ -156,6 +156,7 @@ automatically.</strong></p>
         <hr>
     
         <h3 id=02-special-characters>Special characters</h3>
+<p>(Keywords: quotes, characters, comments.)</p>
 <p>The following keys are used to type text in a source file:</p>
 <pre><code class="language-latex">a-z A-Z 0-9
 + = * / ( ) [ ]
@@ -169,12 +170,20 @@ automatically.</strong></p>
 <pre><code class="language-latex"># $ % &amp; ~ _ ^ \ { } @ &quot; |
 </code></pre>
 
-<p>For example, <code>%</code> sign is used to denote comments in LaTeX (like <code>#</code> in Python).
-Modify your \(\LaTeX\) file so it looks like:</p>
+<p>For example, <code>%</code> sign is used to denote comments in LaTeX (like <code>#</code> in Python).</p>
+<pre><code class="language-latex">\begin{document} % This line start the document
+</code></pre>
+
+<p>Note also that to include text in quotes a different character for the opening
+and closing quote needs to be used:</p>
+<pre><code class="language-latex">Here is how to use `single quotes' and here is how to use double ``quotes''.
+</code></pre>
+
+<p>A document showing these two things together is:</p>
 <pre><code class="language-latex">\documentclass{article} % There are various classes of documents, we will see a few later.
 
 \begin{document} % This line start the document
-Hello, world!
+Here is how to use `single quotes' and here is how to use double ``quotes''.
 \end{document}
 
 </code></pre>
