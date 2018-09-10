@@ -1,6 +1,7 @@
 \documentclass{article} 
 
 \usepackage{graphicx}
+\usepackage{booktabs}
 
 \title{Captions and floats}
 \author{V Knight}
@@ -22,21 +23,17 @@ Figure~\ref{my_picture} shows a cat.
 
 Table~\ref{my_table} shows a table.
 
-
 \begin{table}[!hbtp]
     \begin{center}
         \begin{tabular}{|l|c|}
-            \hline
-            Name & Animal \\
-            \hline
-            Auraya & dog \\
-            \hline
-            Chick & cat \\
-            \hline
-            Duck & cat \\
-            \hline
+            \toprule
+            Name    & Animal \\
+            \midrule
+            Auraya  & dog \\
+            Chick   & cat \\
+            Duck    & cat \\
             Riggins & dog \\
-            \hline
+            \bottomrule
         \end{tabular}
     \end{center}
     \caption{A table of pets}

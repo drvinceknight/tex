@@ -1,5 +1,7 @@
 ### Floats and captions
 
+(Keywords: floats, moving figures, moving tables.)
+
 When including images, pictures and tables it is beneficial to make them
 standalone objects that can be referred to throughout the text. This is done in
 \\(\LaTeX\\) using the concepts of "floats".
@@ -26,16 +28,14 @@ Table~\ref{my_table} shows a table.
 
 \begin{table}
     \begin{center}
-        \begin{tabular}{|l|c|r|}
-            \hline
-            Name & Gender & Start Time\\
-            \hline
-            Angelico & Male & 1100\\
-            \hline
-            Leanne & Female & 0830\\
-            \hline
-            Lisa & Female & 0730\\
-            \hline
+        \begin{tabular}{l|c|r|}
+            \toprule
+            Name        & Gender & Start Time\\
+            \midule
+            Angelico    & Male   & 1100\\
+            Leanne      & Female & 0830\\
+            Lisa        & Female & 0730\\
+            \bottomrule
         \end{tabular}
     \end{center}
     \caption{A table}
