@@ -95,11 +95,13 @@
               
               <li><a href="#19-partitioned-mathematics">Partitioned statements</a></li>
               
-              <li><a href="#20-presentations">Presentations</a></li>
+              <li><a href="#20-page-formatting">Page formatting</a></li>
               
-              <li><a href="#21-overlays-in-presentations">Titles and sections with presentations</a></li>
+              <li><a href="#21-presentations">Presentations</a></li>
               
-              <li><a href="#22-further-materials">Further materials</a></li>
+              <li><a href="#22-overlays-in-presentations">Titles and sections with presentations</a></li>
+              
+              <li><a href="#23-further-materials">Further materials</a></li>
               
             </ul>
       </nav>
@@ -1104,7 +1106,47 @@ Some explanatory text:
         
         <hr>
     
-        <h3 id=20-presentations>Presentations</h3>
+        <h3 id=20-page-formatting>Page formatting</h3>
+<p>(Keywords: header, margin, footer, page, geometry.)</p>
+<p>It is possible to modify margins, footer and header size of \(\LaTeX\) pages.</p>
+<p>This is done using the geometry package.</p>
+<pre><code class="language-latex">\usepackage[margin=1.5cm, includefoot, footskip=30pt]{geometry}
+</code></pre>
+
+<p>This sets a margin size, include a footer and sets the distance between the text
+and the footer.</p>
+<p>There are numerous other options that can be passed to the geometry package.
+Some of these are:</p>
+<ul>
+<li><code>textwidth</code>: The width of the text</li>
+<li><code>headheight</code>: Height of the header</li>
+<li><code>top</code>: Distance from text to top</li>
+</ul>
+<p>A full document showing this is:</p>
+<pre><code class="language-latex">\documentclass{article}
+
+\usepackage[margin=1.5cm, includefoot, footskip=30pt]{geometry}
+
+\title{Page formatting}
+\author{V Knight}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\end{document}
+
+</code></pre>
+
+        
+        <a href="/tex/assets/tex/20-page-formatting/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/20-page-formatting/main.pdf">main.pdf</a>
+        
+        
+        <hr>
+    
+        <h3 id=21-presentations>Presentations</h3>
 <p>It is possible to create high quality presentations in \(LaTeX\). To do this
 we use the <code>beamer</code> document class:</p>
 <pre><code class="language-latex">\documentclass{beamer}
@@ -1145,13 +1187,13 @@ we use the <code>beamer</code> document class:</p>
 </code></pre>
 
         
-        <a href="/tex/assets/tex/20-presentations/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/20-presentations/main.pdf">main.pdf</a>
+        <a href="/tex/assets/tex/21-presentations/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/21-presentations/main.pdf">main.pdf</a>
         
         
         <hr>
     
-        <h3 id=21-overlays-in-presentations>Titles and sections with presentations</h3>
+        <h3 id=22-overlays-in-presentations>Titles and sections with presentations</h3>
 <p>Most of the LaTeX code you have learnt so far an be used without much change in
 a beamer presentation within the <code>frame</code> environment. There are however a few
 particularities:</p>
@@ -1202,13 +1244,13 @@ particular take a look at the <code>pause</code>, <code>only</code> and <code>on
 </code></pre>
 
         
-        <a href="/tex/assets/tex/21-overlays-in-presentations/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/21-overlays-in-presentations/main.pdf">main.pdf</a>
+        <a href="/tex/assets/tex/22-overlays-in-presentations/main.tex">main.tex</a>
+        <a href="/tex/assets/tex/22-overlays-in-presentations/main.pdf">main.pdf</a>
         
         
         <hr>
     
-        <h3 id=22-further-materials>Further materials</h3>
+        <h3 id=23-further-materials>Further materials</h3>
 <ul>
 <li><a href="http://www.geraintianpalmer.org.uk/teaching/latex-refresher/">Tutorial by Geraint Palmer</a></li>
 <li><a href="http://www.geraintianpalmer.org.uk/teaching/latex-refresher/cy/">Welsh language tutorial by Geraint Palmer</a></li>
