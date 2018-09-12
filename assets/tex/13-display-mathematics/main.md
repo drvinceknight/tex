@@ -6,7 +6,7 @@ To include mathematics in a "displayed" style use the following:
 Here is an integral:
 
 \[
-    \int_{i=0}^{5}x ^ 2dx
+    \int_{0}^{5}x ^ 2dx
 \]
 
 Here is a summation:
