@@ -20,7 +20,7 @@ Figure~\ref{my_picture} shows a picture.
 \end{figure}
 ```
 
-Tables are (surprisingly) tables:
+Tables are tables:
 
 ```language-latex
 Table~\ref{my_table} shows a table.
@@ -46,7 +46,7 @@ Table~\ref{my_table} shows a table.
 Note that these are called "floats" because they are designed to move in the
 document to ensure the best use of space. As a result of this it is good
 practice to not refer to floats by relative position. For example do not use:
-"in the picture below" but "in Figure~\ref{my_picture}".
+`in the picture below` but `in Figure~\ref{my_picture}`.
 
 \\(LaTeX\\) will aim to place floats in an efficient manner however some of the
 rules it follows can be broken by passing the following options:
@@ -57,7 +57,9 @@ rules it follows can be broken by passing the following options:
 - `p`: the float can be allowed on a page or column by itself.
 - `!`: some further restrictions should be ignored.
 
-A full document with a figure and a table, using all those options is:
+A full document with a figure and a table, using all those options is (this
+uses this image:
+<a href="{{root}}/assets/tex/09-captions-and-floats/cat.jpg">cat.jpg</a>):
 
 ```language-latex
 {% include main.tex %}

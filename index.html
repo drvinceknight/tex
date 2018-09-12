@@ -41,80 +41,77 @@
 <body>
 
     <header>
-       
-    <div class="row">
-        <div class="three.columns">
-            <a class="logo" href=".">Writing with \(LaTeX\)</a>
+        <div class="row">
+            <div class="three.columns">
+                <a class="logo" href=".">Writing with \(LaTeX\)</a>
+            </div>
+            <div class="eight.columns">
+                <a class="logo">A tutorial based on a set of minimal examples.</a>
+            </div>
+            <div class="one.column">
+          <input id="nav" type="checkbox">
+          <label for="nav"></label>
+          <nav>
+                <ul>
+                  
+                  <li><a href="#00-about-latex">About \(LaTeX\)</a></li>
+                  
+                  <li><a href="#01-basic-document">A basic document</a></li>
+                  
+                  <li><a href="#02-special-characters">Special characters</a></li>
+                  
+                  <li><a href="#03-the-preamble">The preamble</a></li>
+                  
+                  <li><a href="#04-an-abstract">An abstract</a></li>
+                  
+                  <li><a href="#05-lists">Lists</a></li>
+                  
+                  <li><a href="#06-tables">Tables</a></li>
+                  
+                  <li><a href="#07-including-pictures">Including pictures</a></li>
+                  
+                  <li><a href="#08-drawing-pictures">Drawing pictures</a></li>
+                  
+                  <li><a href="#09-captions-and-floats">Floats and captions</a></li>
+                  
+                  <li><a href="#10-sections">Sections</a></li>
+                  
+                  <li><a href="#11-bibliographies">Bibliographies</a></li>
+                  
+                  <li><a href="#12-inline-mathematics">Inline mathematics</a></li>
+                  
+                  <li><a href="#13-display-mathematics">Displayed mathematics</a></li>
+                  
+                  <li><a href="#14-equations">Equations</a></li>
+                  
+                  <li><a href="#15-text-in-mathematics">Text in mathematics</a></li>
+                  
+                  <li><a href="#16-arithmetic-operators">Arithmetic operators</a></li>
+                  
+                  <li><a href="#17-matrices">Matrices</a></li>
+                  
+                  <li><a href="#18-aligned-mathematics">Aligned mathematics</a></li>
+                  
+                  <li><a href="#19-partitioned-mathematics">Partitioned statements</a></li>
+                  
+                  <li><a href="#20-page-formatting">Page formatting</a></li>
+                  
+                  <li><a href="#21-presentations">Presentations</a></li>
+                  
+                  <li><a href="#22-overlays-in-presentations">Titles and sections with presentations</a></li>
+                  
+                  <li><a href="#23-further-materials">Further materials</a></li>
+                  
+                </ul>
+          </nav>
+            </div>
         </div>
-        <div class="eight.columns">
-            <a class="logo">A tutorial based on a set of minimal examples.</a>
-        </div>
-        <div class="one.column">
-      <input id="nav" type="checkbox">
-      <label for="nav"></label>
-      <nav>
-            <ul>
-              
-              <li><a href="#00-about-latex">About \(LaTeX\)</a></li>
-              
-              <li><a href="#01-basic-document">A basic document</a></li>
-              
-              <li><a href="#02-special-characters">Special characters</a></li>
-              
-              <li><a href="#03-the-preamble">The preamble</a></li>
-              
-              <li><a href="#04-an-abstract">An abstract</a></li>
-              
-              <li><a href="#05-lists">Lists</a></li>
-              
-              <li><a href="#06-tables">Tables</a></li>
-              
-              <li><a href="#07-including-pictures">Including pictures</a></li>
-              
-              <li><a href="#08-drawing-pictures">Drawing pictures</a></li>
-              
-              <li><a href="#09-captions-and-floats">Floats and captions</a></li>
-              
-              <li><a href="#10-sections">Sections</a></li>
-              
-              <li><a href="#11-bibliographies">Bibliographies</a></li>
-              
-              <li><a href="#12-inline-mathematics">Inline mathematics</a></li>
-              
-              <li><a href="#13-display-mathematics">Displayed mathematics</a></li>
-              
-              <li><a href="#14-equations">Equations</a></li>
-              
-              <li><a href="#15-text-in-mathematics">Text in mathematics</a></li>
-              
-              <li><a href="#16-arithmetic-operators">Arithmetic operators</a></li>
-              
-              <li><a href="#17-matrices">Matrices</a></li>
-              
-              <li><a href="#18-aligned-mathematics">Aligned mathematics</a></li>
-              
-              <li><a href="#19-partitioned-mathematics">Partitioned statements</a></li>
-              
-              <li><a href="#20-page-formatting">Page formatting</a></li>
-              
-              <li><a href="#21-presentations">Presentations</a></li>
-              
-              <li><a href="#22-overlays-in-presentations">Titles and sections with presentations</a></li>
-              
-              <li><a href="#23-further-materials">Further materials</a></li>
-              
-            </ul>
-      </nav>
-        </div>
-    </div>
-
     </header>
 
 	<div class="container">
         
-    
-        <p></p>
-        <h3 id=00-about-latex>About \(LaTeX\)</h3>
+            <p></p>
+            <h3 id=00-about-latex>About \(LaTeX\)</h3>
 <p>A typesetting language is a language that requires the user to write code that
 is then 'translated' to a form that is 'human readable'.</p>
 <p><img class="u-full-width" src="/tex/assets/img/compile_diagram.png"></p>
@@ -129,12 +126,12 @@ is then 'translated' to a form that is 'human readable'.</p>
 <p>If you do not already have an installed version I recommend
 <a href="https://www.overleaf.com/">overleaf.com</a> a cloud based service.</p>
 
+            
+            
+            <hr>
         
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=01-basic-document>A basic document</h3>
+            <p></p>
+            <h3 id=01-basic-document>A basic document</h3>
 <p>In the editor type the following:</p>
 <pre><code class="language-latex">\documentclass{article}
 
@@ -150,15 +147,15 @@ tutorial I recommend compiling with a modern compiler like <code>pdflatex</code>
 <code>xelatex</code>. <strong>If you are using a cloud based service compilation usually happens
 automatically.</strong></p>
 
+            
+            <a href="/tex/assets/tex/01-basic-document/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/01-basic-document/main.pdf">main.pdf</a>
+            
+            
+            <hr>
         
-        <a href="/tex/assets/tex/01-basic-document/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/01-basic-document/main.pdf">main.pdf</a>
-        
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=02-special-characters>Special characters</h3>
+            <p></p>
+            <h3 id=02-special-characters>Special characters</h3>
 <p>(Keywords: quotes, characters, comments.)</p>
 <p>The following keys are used to type text in a source file:</p>
 <pre><code class="language-latex">a-z A-Z 0-9
@@ -191,15 +188,15 @@ Here is how to use `single quotes' and here is how to use double ``quotes''.
 
 </code></pre>
 
+            
+            <a href="/tex/assets/tex/02-special-characters/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/02-special-characters/main.pdf">main.pdf</a>
+            
+            
+            <hr>
         
-        <a href="/tex/assets/tex/02-special-characters/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/02-special-characters/main.pdf">main.pdf</a>
-        
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=03-the-preamble>The preamble</h3>
+            <p></p>
+            <h3 id=03-the-preamble>The preamble</h3>
 <p>In general all the code that comes before the <code>\begin{document}</code> statement is
 called the 'preamble' and is used to set a title for the document, call certain
 packages as well as various other things. The following code (to be inserted in
@@ -214,10 +211,10 @@ do so you need to include the following line (in the main body):</p>
 <pre><code class="language-latex">\maketitle
 </code></pre>
 
-<p>Your full document will now look like:</p>
+<p>A full document with this is:</p>
 <pre><code class="language-latex">\documentclass{article} % There are various classes of documents, we will see a few later.
 
-\title{Choose a title}
+\title{The preamble}
 \author{V Knight}
 \date{\today}
 
@@ -230,15 +227,15 @@ Hello, world!
 
 </code></pre>
 
+            
+            <a href="/tex/assets/tex/03-the-preamble/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/03-the-preamble/main.pdf">main.pdf</a>
+            
+            
+            <hr>
         
-        <a href="/tex/assets/tex/03-the-preamble/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/03-the-preamble/main.pdf">main.pdf</a>
-        
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=04-an-abstract>An abstract</h3>
+            <p></p>
+            <h3 id=04-an-abstract>An abstract</h3>
 <p>The following will add an abstract to your document:</p>
 <pre><code class="language-latex">\begin{abstract}
     This document contains some basic LaTeX code that will be useful to me
@@ -246,10 +243,10 @@ Hello, world!
 \end{abstract}
 </code></pre>
 
-<p>Your full document will now look like:</p>
+<p>A full version of this is:</p>
 <pre><code class="language-latex">\documentclass{article} % There are various classes of documents, we will see a few later.
 
-\title{Choose a title}
+\title{An abstract}
 \author{V Knight}
 \date{\today}
 
@@ -267,15 +264,15 @@ Hello, world!
 
 </code></pre>
 
+            
+            <a href="/tex/assets/tex/04-an-abstract/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/04-an-abstract/main.pdf">main.pdf</a>
+            
+            
+            <hr>
         
-        <a href="/tex/assets/tex/04-an-abstract/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/04-an-abstract/main.pdf">main.pdf</a>
-        
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=05-lists>Lists</h3>
+            <p></p>
+            <h3 id=05-lists>Lists</h3>
 <p>There are various ways to obtain lists:</p>
 <pre><code class="language-latex">\begin{itemize}
     \item Unordered item number 1
@@ -317,15 +314,15 @@ Hello, world!
 Python where specific environments are delimited by indentation levels, in
 LaTeX they are ended by specific end statements <code>\end{enumerate}</code>.</p>
 
+            
+            <a href="/tex/assets/tex/05-lists/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/05-lists/main.pdf">main.pdf</a>
+            
+            
+            <hr>
         
-        <a href="/tex/assets/tex/05-lists/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/05-lists/main.pdf">main.pdf</a>
-        
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=06-tables>Tables</h3>
+            <p></p>
+            <h3 id=06-tables>Tables</h3>
 <p>(Keywords: tables, tabular, booktabs.)</p>
 <p>The following code creates a simple table (note the <code>c</code>, <code>r</code>, and <code>l</code> tags that
 indicate text alignment, experiment by changing these):</p>
@@ -401,15 +398,15 @@ A table with the booktabs package:
 
 <p>In general in LaTeX <code>\\</code> is used to denote a 'new line'.</p>
 
+            
+            <a href="/tex/assets/tex/06-tables/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/06-tables/main.pdf">main.pdf</a>
+            
+            
+            <hr>
         
-        <a href="/tex/assets/tex/06-tables/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/06-tables/main.pdf">main.pdf</a>
-        
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=07-including-pictures>Including pictures</h3>
+            <p></p>
+            <h3 id=07-including-pictures>Including pictures</h3>
 <p>To include a picture is straightforward in LaTeX. We make use of the <code>graphicx</code>
 package. In LaTeX packages are included in the preamble using <code>usepackage</code>.
 Include the following in the preamble:</p>
@@ -458,15 +455,15 @@ pdf format when using a modern compiler, here is a picture as an example:
 
 </code></pre>
 
+            
+            <a href="/tex/assets/tex/07-including-pictures/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/07-including-pictures/main.pdf">main.pdf</a>
+            
+            
+            <hr>
         
-        <a href="/tex/assets/tex/07-including-pictures/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/07-including-pictures/main.pdf">main.pdf</a>
-        
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=08-drawing-pictures>Drawing pictures</h3>
+            <p></p>
+            <h3 id=08-drawing-pictures>Drawing pictures</h3>
 <p>Graphs, pictures and diagrams can thus be created in any software of choice
 (Python, inkscape, etc...) and then included as required <strong>but</strong> it
 is often easier to draw a picture in LaTeX itself using code. A great package
@@ -534,15 +531,15 @@ tutorials online.</p>
 
 </code></pre>
 
+            
+            <a href="/tex/assets/tex/08-drawing-pictures/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/08-drawing-pictures/main.pdf">main.pdf</a>
+            
+            
+            <hr>
         
-        <a href="/tex/assets/tex/08-drawing-pictures/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/08-drawing-pictures/main.pdf">main.pdf</a>
-        
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=09-captions-and-floats>Floats and captions</h3>
+            <p></p>
+            <h3 id=09-captions-and-floats>Floats and captions</h3>
 <p>(Keywords: floats, moving figures, moving tables.)</p>
 <p>When including images, pictures and tables it is beneficial to make them
 standalone objects that can be referred to throughout the text. This is done in
@@ -559,7 +556,7 @@ standalone objects that can be referred to throughout the text. This is done in
 \end{figure}
 </code></pre>
 
-<p>Tables are (surprisingly) tables:</p>
+<p>Tables are tables:</p>
 <pre><code class="language-latex">Table~\ref{my_table} shows a table.
 
 
@@ -583,7 +580,7 @@ standalone objects that can be referred to throughout the text. This is done in
 <p>Note that these are called "floats" because they are designed to move in the
 document to ensure the best use of space. As a result of this it is good
 practice to not refer to floats by relative position. For example do not use:
-"in the picture below" but "in Figure~\ref{my_picture}".</p>
+<code>in the picture below</code> but <code>in Figure~\ref{my_picture}</code>.</p>
 <p>\(LaTeX\) will aim to place floats in an efficient manner however some of the
 rules it follows can be broken by passing the following options:</p>
 <ul>
@@ -593,7 +590,9 @@ rules it follows can be broken by passing the following options:</p>
 <li><code>p</code>: the float can be allowed on a page or column by itself.</li>
 <li><code>!</code>: some further restrictions should be ignored.</li>
 </ul>
-<p>A full document with a figure and a table, using all those options is:</p>
+<p>A full document with a figure and a table, using all those options is (this
+uses this image:
+<a href="/tex/assets/tex/09-captions-and-floats/cat.jpg">cat.jpg</a>):</p>
 <pre><code class="language-latex">\documentclass{article} 
 
 \usepackage{graphicx}
@@ -640,15 +639,15 @@ Table~\ref{my_table} shows a table.
 
 </code></pre>
 
+            
+            <a href="/tex/assets/tex/09-captions-and-floats/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/09-captions-and-floats/main.pdf">main.pdf</a>
+            
+            
+            <hr>
         
-        <a href="/tex/assets/tex/09-captions-and-floats/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/09-captions-and-floats/main.pdf">main.pdf</a>
-        
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=10-sections>Sections</h3>
+            <p></p>
+            <h3 id=10-sections>Sections</h3>
 <p>It is possible to organise parts of a document using 'sections':</p>
 <pre><code class="language-latex">\section{My first section}
 
@@ -719,15 +718,15 @@ In Section \ref{first_section} we saw that...
 
 </code></pre>
 
+            
+            <a href="/tex/assets/tex/10-sections/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/10-sections/main.pdf">main.pdf</a>
+            
+            
+            <hr>
         
-        <a href="/tex/assets/tex/10-sections/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/10-sections/main.pdf">main.pdf</a>
-        
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=11-bibliographies>Bibliographies</h3>
+            <p></p>
+            <h3 id=11-bibliographies>Bibliographies</h3>
 <p>To create a bibliography we need to store the bibliographic information in a
 separate 'bibtex' file. In this file you include bibliographic information for
 the various references you might have.</p>
@@ -778,17 +777,17 @@ A very helpful reference for LaTeX is \cite{Gratzer2007}.
 
 </code></pre>
 
+            
+            <a href="/tex/assets/tex/11-bibliographies/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/11-bibliographies/main.pdf">main.pdf</a>
+            
+            
+            <a href="/tex/assets/tex/11-bibliographies/main.tex">bibliography.bib</a>
+            
+            <hr>
         
-        <a href="/tex/assets/tex/11-bibliographies/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/11-bibliographies/main.pdf">main.pdf</a>
-        
-        
-        <a href="/tex/assets/tex/11-bibliographies/main.tex">bibliography.bib</a>
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=12-inline-mathematics>Inline mathematics</h3>
+            <p></p>
+            <h3 id=12-inline-mathematics>Inline mathematics</h3>
 <p>Typesetting mathematics is \(\LaTeX\)'s strength. Here is an example of
 including some "inline" mathematics:</p>
 <pre><code class="language-latex">Mathematics can be typed in to \LaTeX\ as $x^2$ and/or
@@ -814,15 +813,15 @@ Mathematics can be typed in to \LaTeX\ as $x^2$ and/or \((a+b)^2=a^2+2ab+b^2\).
 
 </code></pre>
 
+            
+            <a href="/tex/assets/tex/12-inline-mathematics/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/12-inline-mathematics/main.pdf">main.pdf</a>
+            
+            
+            <hr>
         
-        <a href="/tex/assets/tex/12-inline-mathematics/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/12-inline-mathematics/main.pdf">main.pdf</a>
-        
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=13-display-mathematics>Displayed mathematics</h3>
+            <p></p>
+            <h3 id=13-display-mathematics>Displayed mathematics</h3>
 <p>To include mathematics in a "displayed" style use the following:</p>
 <pre><code class="language-latex">Here is an integral:
 
@@ -866,15 +865,15 @@ $$
 
 </code></pre>
 
+            
+            <a href="/tex/assets/tex/13-display-mathematics/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/13-display-mathematics/main.pdf">main.pdf</a>
+            
+            
+            <hr>
         
-        <a href="/tex/assets/tex/13-display-mathematics/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/13-display-mathematics/main.pdf">main.pdf</a>
-        
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=14-equations>Equations</h3>
+            <p></p>
+            <h3 id=14-equations>Equations</h3>
 <p>Mathematics can also be included in equations and referred to as for sections:</p>
 <pre><code class="language-latex">\begin{equation}\label{my_first_equation}
 e=mc^2
@@ -903,15 +902,15 @@ In equation (\ref{my_first_equation}) we have a very well known relationship.
 
 </code></pre>
 
+            
+            <a href="/tex/assets/tex/14-equations/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/14-equations/main.pdf">main.pdf</a>
+            
+            
+            <hr>
         
-        <a href="/tex/assets/tex/14-equations/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/14-equations/main.pdf">main.pdf</a>
-        
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=15-text-in-mathematics>Text in mathematics</h3>
+            <p></p>
+            <h3 id=15-text-in-mathematics>Text in mathematics</h3>
 <p>To include text within mathematics we can use the <code>text</code> 
 command from the <code>amsmath</code> package:</p>
 <pre><code class="language-latex">\[
@@ -941,15 +940,15 @@ command from the <code>amsmath</code> package:</p>
 
 </code></pre>
 
+            
+            <a href="/tex/assets/tex/15-text-in-mathematics/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/15-text-in-mathematics/main.pdf">main.pdf</a>
+            
+            
+            <hr>
         
-        <a href="/tex/assets/tex/15-text-in-mathematics/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/15-text-in-mathematics/main.pdf">main.pdf</a>
-        
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=16-arithmetic-operators>Arithmetic operators</h3>
+            <p></p>
+            <h3 id=16-arithmetic-operators>Arithmetic operators</h3>
 <p>Arithmetic operators are available in \(\LaTeX\):</p>
 <pre><code class="language-latex">\begin{itemize}
     \item \(a+b\)
@@ -990,15 +989,15 @@ command from the <code>amsmath</code> package:</p>
 
 </code></pre>
 
+            
+            <a href="/tex/assets/tex/16-arithmetic-operators/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/16-arithmetic-operators/main.pdf">main.pdf</a>
+            
+            
+            <hr>
         
-        <a href="/tex/assets/tex/16-arithmetic-operators/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/16-arithmetic-operators/main.pdf">main.pdf</a>
-        
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=17-matrices>Matrices</h3>
+            <p></p>
+            <h3 id=17-matrices>Matrices</h3>
 <p>The following code gives a 3 by 2 matrix:</p>
 <pre><code class="language-latex">\[
     \begin{pmatrix}
@@ -1052,15 +1051,15 @@ command from the <code>amsmath</code> package:</p>
 
 </code></pre>
 
+            
+            <a href="/tex/assets/tex/17-matrices/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/17-matrices/main.pdf">main.pdf</a>
+            
+            
+            <hr>
         
-        <a href="/tex/assets/tex/17-matrices/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/17-matrices/main.pdf">main.pdf</a>
-        
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=18-aligned-mathematics>Aligned mathematics</h3>
+            <p></p>
+            <h3 id=18-aligned-mathematics>Aligned mathematics</h3>
 <p>It is possible to create aligned mathematics using:</p>
 <pre><code class="language-latex">\begin{align}
     (x+h)^2-x^2 &amp; =x^2+2xh+h^2-x^2 \nonumber\\
@@ -1111,15 +1110,15 @@ Some explanatory text:
 
 </code></pre>
 
+            
+            <a href="/tex/assets/tex/18-aligned-mathematics/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/18-aligned-mathematics/main.pdf">main.pdf</a>
+            
+            
+            <hr>
         
-        <a href="/tex/assets/tex/18-aligned-mathematics/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/18-aligned-mathematics/main.pdf">main.pdf</a>
-        
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=19-partitioned-mathematics>Partitioned statements</h3>
+            <p></p>
+            <h3 id=19-partitioned-mathematics>Partitioned statements</h3>
 <p>It is possible to create partitioned statements for case dependent expressions:</p>
 <pre><code class="language-latex">\[
     1 + (-1) ^ n =
@@ -1155,15 +1154,15 @@ Some explanatory text:
 
 </code></pre>
 
+            
+            <a href="/tex/assets/tex/19-partitioned-mathematics/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/19-partitioned-mathematics/main.pdf">main.pdf</a>
+            
+            
+            <hr>
         
-        <a href="/tex/assets/tex/19-partitioned-mathematics/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/19-partitioned-mathematics/main.pdf">main.pdf</a>
-        
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=20-page-formatting>Page formatting</h3>
+            <p></p>
+            <h3 id=20-page-formatting>Page formatting</h3>
 <p>(Keywords: header, margin, footer, page, geometry.)</p>
 <p>It is possible to modify margins, footer and header size of \(\LaTeX\) pages.</p>
 <p>This is done using the geometry package.</p>
@@ -1196,15 +1195,15 @@ Some of these are:</p>
 
 </code></pre>
 
+            
+            <a href="/tex/assets/tex/20-page-formatting/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/20-page-formatting/main.pdf">main.pdf</a>
+            
+            
+            <hr>
         
-        <a href="/tex/assets/tex/20-page-formatting/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/20-page-formatting/main.pdf">main.pdf</a>
-        
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=21-presentations>Presentations</h3>
+            <p></p>
+            <h3 id=21-presentations>Presentations</h3>
 <p>It is possible to create high quality presentations in \(LaTeX\). To do this
 we use the <code>beamer</code> document class:</p>
 <pre><code class="language-latex">\documentclass{beamer}
@@ -1244,15 +1243,15 @@ we use the <code>beamer</code> document class:</p>
 
 </code></pre>
 
+            
+            <a href="/tex/assets/tex/21-presentations/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/21-presentations/main.pdf">main.pdf</a>
+            
+            
+            <hr>
         
-        <a href="/tex/assets/tex/21-presentations/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/21-presentations/main.pdf">main.pdf</a>
-        
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=22-overlays-in-presentations>Titles and sections with presentations</h3>
+            <p></p>
+            <h3 id=22-overlays-in-presentations>Titles and sections with presentations</h3>
 <p>Most of the LaTeX code you have learnt so far an be used without much change in
 a beamer presentation within the <code>frame</code> environment. There are however a few
 particularities:</p>
@@ -1302,15 +1301,15 @@ particular take a look at the <code>pause</code>, <code>only</code> and <code>on
 
 </code></pre>
 
+            
+            <a href="/tex/assets/tex/22-overlays-in-presentations/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/22-overlays-in-presentations/main.pdf">main.pdf</a>
+            
+            
+            <hr>
         
-        <a href="/tex/assets/tex/22-overlays-in-presentations/main.tex">main.tex</a>
-        <a href="/tex/assets/tex/22-overlays-in-presentations/main.pdf">main.pdf</a>
-        
-        
-        <hr>
-    
-        <p></p>
-        <h3 id=23-further-materials>Further materials</h3>
+            <p></p>
+            <h3 id=23-further-materials>Further materials</h3>
 <ul>
 <li><a href="http://www.geraintianpalmer.org.uk/teaching/latex-refresher/">Tutorial by Geraint Palmer</a></li>
 <li><a href="http://www.geraintianpalmer.org.uk/teaching/latex-refresher/cy/">Welsh language tutorial by Geraint Palmer</a></li>
@@ -1321,11 +1320,10 @@ particular take a look at the <code>pause</code>, <code>only</code> and <code>on
 <li><a href="https://www.inf.ethz.ch/personal/markusp/teaching/guides/guide-tables.pdf">Small Guide to Making Nice Tables</a></li>
 </ul>
 
+            
+            
+            <hr>
         
-        
-        <hr>
-    
-
     </div>
 </body>
 

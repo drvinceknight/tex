@@ -41,13 +41,41 @@
 <body>
 
     <header>
-       {% block header %}
-       {% endblock %}
+        <div class="row">
+            <div class="three.columns">
+                <a class="logo" href=".">{{ title }}</a>
+            </div>
+            <div class="eight.columns">
+                <a class="logo">{{ description }}</a>
+            </div>
+            <div class="one.column">
+          <input id="nav" type="checkbox">
+          <label for="nav"></label>
+          <nav>
+                <ul>
+                  {% for chapter in chapters %}
+                  <li><a href="#{{ chapter.stem }}">{{ chapter.title }}</a></li>
+                  {% endfor %}
+                </ul>
+          </nav>
+            </div>
+        </div>
     </header>
 
 	<div class="container">
-        {% block body %}
-        {% endblock %}
+        {% for chapter in chapters %}
+            <p></p>
+            {{ chapter.content }}
+
+            {% if chapter.source %}
+            <a href="/{{root}}/assets/tex/{{ chapter.stem }}/main.tex">main.tex</a>
+            <a href="/{{root}}/assets/tex/{{ chapter.stem }}/main.pdf">main.pdf</a>
+            {% endif %}
+            {% if chapter.bib_source %}
+            <a href="/{{root}}/assets/tex/{{ chapter.stem }}/main.tex">bibliography.bib</a>
+            {% endif %}
+            <hr>
+        {% endfor %}
     </div>
 </body>
 
