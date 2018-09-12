@@ -21,7 +21,7 @@ do so you need to include the following line (in the main body):
 \maketitle
 ```
 
-Your full document will now look like:
+A full document with this is:
 
 ```language-latex
 {% include main.tex %}

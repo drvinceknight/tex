@@ -9,7 +9,7 @@ The following will add an abstract to your document:
 \end{abstract}
 ```
 
-Your full document will now look like:
+A full version of this is:
 
 ```language-latex
 {% include main.tex %}
