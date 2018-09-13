@@ -1,5 +1,8 @@
 ### A basic document
 
+(Keywords: documentclass.) 
+[Video demo](https://www.youtube.com/watch?v=rLWT0z6yvrk)
+
 In the editor type the following:
 
 ```language-latex

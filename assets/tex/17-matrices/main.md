@@ -1,5 +1,8 @@
 ### Matrices
 
+(Keywords: matrices, linear algebra, mathematics.)
+[Video demo](https://www.youtube.com/watch?v=xaD9Mhqnc1I)
+
 The following code gives a 3 by 2 matrix:
 
 

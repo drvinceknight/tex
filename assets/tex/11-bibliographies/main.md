@@ -1,5 +1,8 @@
 ### Bibliographies
 
+(Keywords: bibtex, bibliography, cite.)
+[Video demo](https://www.youtube.com/watch?v=JwXQb25cpqA)
+
 To create a bibliography we need to store the bibliographic information in a
 separate 'bibtex' file. In this file you include bibliographic information for
 the various references you might have.

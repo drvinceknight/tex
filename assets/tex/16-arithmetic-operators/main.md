@@ -1,5 +1,8 @@
 ### Arithmetic operators
 
+(Keywords: arithmetic, mathematics.)
+[Video demo](https://www.youtube.com/watch?v=KD45L_K5Gcg)
+
 Arithmetic operators are available in \\(\LaTeX\\):
 
 

@@ -1,6 +1,7 @@
 ### Floats and captions
 
-(Keywords: floats, moving figures, moving tables.)
+(Keywords: floats, moving figures, moving tables, label.)
+[Video demo](https://www.youtube.com/watch?v=Kmf9yXOodRM)
 
 When including images, pictures and tables it is beneficial to make them
 standalone objects that can be referred to throughout the text. This is done in

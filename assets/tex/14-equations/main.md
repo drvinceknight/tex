@@ -1,5 +1,8 @@
 ### Equations
 
+(Keywords: mathematics, equations, label.)
+[Video demo](https://www.youtube.com/watch?v=dIqfc_oBruM)
+
 Mathematics can also be included in equations and referred to as for sections:
 
 ```language-latex

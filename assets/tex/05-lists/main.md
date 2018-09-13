@@ -1,5 +1,8 @@
 ### Lists
 
+(Keywords: lists, bullet points.)
+[Video demo](https://www.youtube.com/watch?v=r0UGsidm114)
+
 There are various ways to obtain lists:
 
 ```language-latex

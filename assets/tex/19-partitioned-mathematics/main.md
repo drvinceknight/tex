@@ -1,5 +1,8 @@
 ### Partitioned statements
 
+(Keywords: partitioned, mathematics.)
+[Video demo](https://www.youtube.com/watch?v=Ufrolem8ZP8)
+
 It is possible to create partitioned statements for case dependent expressions:
 
 ```language-latex

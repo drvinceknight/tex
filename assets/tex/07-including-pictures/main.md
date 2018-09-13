@@ -1,5 +1,8 @@
 ### Including pictures
 
+(Keywords: pictures, jpg, png, graphicx.)
+[Video demo](https://www.youtube.com/watch?v=3dGq7xCQNRY)
+
 To include a picture is straightforward in LaTeX. We make use of the `graphicx`
 package. In LaTeX packages are included in the preamble using `usepackage`.
 Include the following in the preamble:

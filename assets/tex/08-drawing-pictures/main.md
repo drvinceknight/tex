@@ -1,5 +1,8 @@
 ### Drawing pictures
 
+(Keywords: tikz, diagrams.)
+[Video demo](https://www.youtube.com/watch?v=yrCN4LuAf88)
+
 Graphs, pictures and diagrams can thus be created in any software of choice
 (Python, inkscape, etc...) and then included as required **but** it
 is often easier to draw a picture in LaTeX itself using code. A great package
