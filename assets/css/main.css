@@ -155,6 +155,10 @@
 header {
   overflow: hidden;
   background: #222;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0px;
+  z-index: 1000;
 }
 
 header a, header label {
