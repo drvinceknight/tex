@@ -51,7 +51,8 @@ def obtain_html_and_title(path, ROOT=ROOT):
 
     html = markdown.markdown(md, extensions=["markdown.extensions.fenced_code"])
     title = html[html.index("<h3>") + 4 : html.index("</h3>")]
-    html = html.replace("<h3>", f"<h3 id={path.stem}>")
+    html = html.replace("<h3>", f"<a href=#{path.stem}><h2 id={path.stem}>")
+    html = html.replace("</h3>", "</h3></a>")
 
     return html, title
 
