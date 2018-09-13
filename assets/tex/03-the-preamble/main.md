@@ -1,5 +1,7 @@
 ### The preamble
 
+(Keywords: preamble.)
+[Video demo](https://www.youtube.com/watch?v=RS4YqVQITeY&t)
 
 In general all the code that comes before the `\begin{document}` statement is
 called the 'preamble' and is used to set a title for the document, call certain

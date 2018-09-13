@@ -1,6 +1,7 @@
 ### Tables
 
 (Keywords: tables, tabular, booktabs.)
+[Video demo](https://www.youtube.com/watch?v=bSIAUkCD948)
 
 The following code creates a simple table (note the `c`, `r`, and `l` tags that
 indicate text alignment, experiment by changing these):

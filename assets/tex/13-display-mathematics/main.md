@@ -1,5 +1,8 @@
 ### Displayed mathematics
 
+(Keywords: mathematics, display.)
+[Video demo](https://www.youtube.com/watch?v=DzPS2OnJjIk)
+
 To include mathematics in a "displayed" style use the following:
 
 ```language-latex

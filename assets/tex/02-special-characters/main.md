@@ -1,5 +1,8 @@
 ### Special characters
 
+(Keywords: comments, quote.)
+[Video demo](https://www.youtube.com/watch?v=dHnvAl_xzeU)
+
 (Keywords: quotes, characters, comments.)
 
 The following keys are used to type text in a source file:

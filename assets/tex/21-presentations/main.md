@@ -1,5 +1,8 @@
 ### Presentations
 
+(Keywords: beamer, presentations.)
+[Video demo](https://www.youtube.com/watch?v=mOChUlrhBuQ)
+
 It is possible to create high quality presentations in \\(LaTeX\\). To do this
 we use the `beamer` document class:
 

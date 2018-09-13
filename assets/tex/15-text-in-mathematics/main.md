@@ -1,6 +1,9 @@
 ### Text in mathematics
 
-To include text within mathematics we can use the `text` 
+(Keywords: text, mbox, mathematics.)
+[Video demo](https://www.youtube.com/watch?v=hSaf-aJscUw)
+
+To include text within mathematics we can use the `text`
 command from the `amsmath` package:
 
 ```language-latex

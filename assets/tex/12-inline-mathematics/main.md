@@ -1,5 +1,8 @@
 ### Inline mathematics
 
+(Keywords: mathematics, inline.)
+[Video demo](https://www.youtube.com/watch?v=TkVms4xO_cs)
+
 Typesetting mathematics is \\(\LaTeX\\)'s strength. Here is an example of
 including some "inline" mathematics:
 

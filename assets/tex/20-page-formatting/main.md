@@ -1,6 +1,7 @@
 ### Page formatting
 
 (Keywords: header, margin, footer, page, geometry.)
+[Video demo](https://www.youtube.com/watch?v=b_WfQufOHbk)
 
 It is possible to modify margins, footer and header size of \\(\LaTeX\\) pages.
 

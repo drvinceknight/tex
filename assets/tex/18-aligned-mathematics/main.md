@@ -1,5 +1,8 @@
 ### Aligned mathematics
 
+(Keywords: aligned, label, mathematics.)
+[Video demo](https://www.youtube.com/watch?v=qCmbUUo2xRA)
+
 It is possible to create aligned mathematics using:
 
 ```language-latex

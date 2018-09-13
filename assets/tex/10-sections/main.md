@@ -1,5 +1,8 @@
 ### Sections
 
+(Keywords: sections, subsections, label.)
+[Video demo](https://www.youtube.com/watch?v=5dGhMXgH1X8)
+
 It is possible to organise parts of a document using 'sections':
 
 ```language-latex

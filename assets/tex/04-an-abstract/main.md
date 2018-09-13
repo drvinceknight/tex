@@ -1,5 +1,8 @@
 ### An abstract
 
+(Keywords: abstract.)
+[Video demo](https://www.youtube.com/watch?v=AQP1lM7jWGY)
+
 The following will add an abstract to your document:
 
 ```language-latex
