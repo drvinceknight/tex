@@ -218,5 +218,7 @@ nav a {
 #nav { display: none; }
 
 #nav:checked ~ nav {
+  height: 90vh;
+  overflow: scroll;
   max-height: 2000px; /* This can be anything bigger than your nav height. The transition duration works with this */
 }
