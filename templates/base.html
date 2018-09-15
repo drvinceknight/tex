@@ -77,10 +77,7 @@
             <hr>
         {% endfor %}
     </div>
-</body>
-
-
-	<div class="container">
+    <div class="container">
         <p style="font-size: small;">
         Source code: 
         <a href="https://github.com/drvinceknight/tex">@drvinceknight</a>
@@ -93,4 +90,10 @@
         </p>
         
     </div>
+    <script>
+        document.querySelector('header nav ul').addEventListener('click', function(e){
+            document.querySelector('#nav').checked = false;
+        })
+    </script>
+</body>
 </html>
