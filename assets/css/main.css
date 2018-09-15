@@ -15,6 +15,10 @@
   margin-bottom: 1.2rem;
 }
 
+.section-title {
+  padding-top: 70px;
+  margin-top: -70px;
+}
 /* Hero
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .phones {
@@ -155,6 +159,10 @@
 header {
   overflow: hidden;
   background: #222;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0px;
+  z-index: 1000;
 }
 
 header a, header label {
@@ -188,6 +196,7 @@ header label:after {
 nav {
   float: right;
   max-height: 0;
+  height: 0;
   width: 100%;
   -webkit-transition: max-height 0.3s;
      -moz-transition: max-height 0.3s;
@@ -214,5 +223,7 @@ nav a {
 #nav { display: none; }
 
 #nav:checked ~ nav {
+  height: 90vh;
+  overflow: scroll;
   max-height: 2000px; /* This can be anything bigger than your nav height. The transition duration works with this */
 }
