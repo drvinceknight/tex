@@ -1382,9 +1382,15 @@ particular take a look at the <code>pause</code>, <code>only</code> and <code>on
         
     </div>
     <script>
-        document.querySelector('header nav ul').addEventListener('click', function(e){
+        document.querySelector('header nav ul').addEventListener('click', function(){
             document.querySelector('#nav').checked = false;
-        })
+        });
+
+        var menuHeight = document.querySelector('header').offsetHeight;
+        document.querySelectorAll('.section-title').forEach(function(a){
+            a.style.paddingTop = menuHeight + 'px';
+            a.style.marginTop = '-' + menuHeight + 'px';
+        });
     </script>
 </body>
 
