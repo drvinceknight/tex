@@ -9,3 +9,5 @@
 - [A blog post about moving
   floats](https://drvinceknight.blogspot.com/2013/12/explaining-floats-in-latex.html)
 - [Small Guide to Making Nice Tables](https://www.inf.ethz.ch/personal/markusp/teaching/guides/guide-tables.pdf)
+- [Writing Science with
+  \\(LaTeX\\)](https://figshare.com/articles/Writing_science_with_LaTeX/3205753/2)
