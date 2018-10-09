@@ -1,7 +1,7 @@
 ### Partitioned statements
 
 (Keywords: partitioned, mathematics.)
-[Video demo](https://www.youtube.com/watch?v=Ufrolem8ZP8)
+[Video demo](https://youtu.be/QKae6y-Hlwc)
 
 It is possible to create partitioned statements for case dependent expressions:
 
