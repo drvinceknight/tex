@@ -1,0 +1,38 @@
+\documentclass{article}
+
+\title{Include code}
+\author{V Knight}
+\date{\today}
+
+\usepackage{listings}
+\usepackage{minted}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{lstlisting}
+def fibonacci(n):
+    if n in [0, 1]:
+        return 1
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+for n in range(5):
+    print(n, fibonacci(n))
+\end{lstlisting}
+
+The minted library is an alternative approach:
+
+\begin{minted}{python}
+def fibonacci(n):
+    if n in [0, 1]:
+        return 1
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+for n in range(5):
+    print(n, fibonacci(n))
+\end{minted}
+
+
+\end{document}

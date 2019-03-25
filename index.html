@@ -99,6 +99,8 @@
                           
                           <li><a href="#23-further-materials">Further materials</a></li>
                           
+                          <li><a href="#24-including-code">Including code</a></li>
+                          
                         </ul>
                   </nav>
             </div>
@@ -1362,6 +1364,85 @@ particular take a look at the <code>pause</code>, <code>only</code> and <code>on
   \(LaTeX\)</a></li>
 </ul>
 
+            
+            
+            <hr>
+        
+            <p></p>
+            <a href=#24-including-code><h3 class='section-title' id=24-including-code>Including code</h3></a>
+<p>(Keywords: code, listing.)</p>
+<p>It is possible to include code in \(\LaTeX\).</p>
+<p>One approach is to use the <code>listings</code> library. To use this requires
+<code>\usepackage{listings}</code> in the preamble:</p>
+<pre><code class="language-latex">\begin{lstlisting}
+def fibonacci(n):
+    if n in [0, 1]:
+        return 1
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+for n in range(5):
+    print(n, fibonacci(n))
+\end{lstlisting}
+</code></pre>
+
+<p>Another approach is to use the <code>minted</code> library. To use this requires
+<code>\usepackage{minted}</code> in the preamble:</p>
+<pre><code class="language-latex">\begin{minted}{python}
+def fibonacci(n):
+    if n in [0, 1]:
+        return 1
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+for n in range(5):
+    print(n, fibonacci(n))
+\end{minted}
+</code></pre>
+
+<p>A full document showing these is:</p>
+<pre><code class="language-latex">\documentclass{article}
+
+\title{Include code}
+\author{V Knight}
+\date{\today}
+
+\usepackage{listings}
+\usepackage{minted}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{lstlisting}
+def fibonacci(n):
+    if n in [0, 1]:
+        return 1
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+for n in range(5):
+    print(n, fibonacci(n))
+\end{lstlisting}
+
+The minted library is an alternative approach:
+
+\begin{minted}{python}
+def fibonacci(n):
+    if n in [0, 1]:
+        return 1
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+for n in range(5):
+    print(n, fibonacci(n))
+\end{minted}
+
+
+\end{document}
+
+</code></pre>
+
+            
+            <a href="/tex/assets/tex/24-including-code/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/24-including-code/main.pdf">main.pdf</a>
             
             
             <hr>
