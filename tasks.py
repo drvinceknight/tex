@@ -90,7 +90,7 @@ def build_pdf(c):
     assets = pathlib.Path("./assets")
     for p in assets.glob("./tex/**/main.tex"):
         print(f"Compiling {p}")
-        c.run(f"cd {p.parents[0]}; latexmk -pdf main.tex")
+        c.run(f"cd {p.parents[0]}; latexmk --xelatex -shell-escape main.tex")
 
 
 @task
