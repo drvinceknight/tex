@@ -101,6 +101,8 @@
                           
                           <li><a href="#24-including-code">Including code</a></li>
                           
+                          <li><a href="#25-columns">Including code</a></li>
+                          
                         </ul>
                   </nav>
             </div>
@@ -1443,6 +1445,73 @@ for n in range(5):
             
             <a href="/tex/assets/tex/24-including-code/main.tex">main.tex</a>
             <a href="/tex/assets/tex/24-including-code/main.pdf">main.pdf</a>
+            
+            
+            <hr>
+        
+            <p></p>
+            <a href=#25-columns><h3 class='section-title' id=25-columns>Including code</h3></a>
+<p>(Keywords: columns, side by side,)</p>
+<p>It is possible to use columns in \(\LaTeX\).</p>
+<p>This can be done using the <code>usepackage{multicol}</code> package.</p>
+<pre><code class="language-latex">\begin{multicols}{3}
+
+    Here is some text in the first column.
+
+    \columnbreak
+
+    Here is an equation in the second column:
+
+    \[
+        x ^ 2
+    \]
+
+    \columnbreak
+
+    Here is some text in the third column.
+
+\end{multicols}
+</code></pre>
+
+<p>A full document showing this is:</p>
+<pre><code class="language-latex">\documentclass{article}
+
+\title{Using columns}
+\author{V Knight}
+\date{\today}
+
+\usepackage{multicol}
+
+\begin{document}
+
+\maketitle
+
+\begin{multicols}{3}
+
+    Here is some text in the first column.
+
+    \columnbreak
+
+    Here is an equation in the second column:
+
+    \[
+        x ^ 2
+    \]
+
+    \columnbreak
+
+    Here is some text in the third column.
+
+\end{multicols}
+
+
+\end{document}
+
+</code></pre>
+
+            
+            <a href="/tex/assets/tex/25-columns/main.tex">main.tex</a>
+            <a href="/tex/assets/tex/25-columns/main.pdf">main.pdf</a>
             
             
             <hr>
