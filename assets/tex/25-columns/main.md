@@ -1,4 +1,4 @@
-### Including code
+### Using columns
 
 (Keywords: columns, side by side,)
 
